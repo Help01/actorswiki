@@ -2,5 +2,5 @@
 - [[Установка фреймворка|Установка фреймворка]]
 - [[Организация проекта|Организация проекта]]
 - [[Организация сцен|Организация сцен]]
-- [[Книга рецептов Unity3d|https://github.com/dimmpixeye/Unity3d-Cook-Book/tree/master/Ru]]
+- [[Книга рецептов Unity3d|https://github.com/dimmpixeye/Unity3d-Cook-Book]]
  
