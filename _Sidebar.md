@@ -6,7 +6,7 @@
 - [[Фабрики|Фабрики]]
 - [[Книга рецептов Unity3d|https://github.com/dimmpixeye/Unity3d-Cook-Book]]
 
-### Manual
+### Справка
 - [[Основы|Основы]]
  
  
