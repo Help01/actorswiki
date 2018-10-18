@@ -99,7 +99,7 @@ public GameObject go;
 
 Таким образом каждый из представленных в игре компонентов может быть "доступен" любой из сущности. Чтобы на уровне игровой логики определить какой из компонентов активен используется дополнительный массив bool масок.
  
-| Component/Entities    | Entity Asteroid 1 | Entity Asteroid 2 | Entity SpaceShip 3  | Entity Player 4   |
+| Component/Entities    | Entity Asteroid 1  | Entity Asteroid 2  | Entity SpaceShip 3  | Entity Player 4   |
 | -------------         |:-------------:    | -----:            |  -----:             | -----:            |          
 | Component Motion      | :heavy_check_mark:| :heavy_check_mark:|  :heavy_check_mark: |:heavy_check_mark: |
 | Component Health      | :heavy_check_mark:| :heavy_check_mark:|  :heavy_check_mark: |:heavy_check_mark: |
