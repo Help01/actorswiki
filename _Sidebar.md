@@ -9,5 +9,5 @@
 ### Справка
 
 - [[Основы|[RU] Basics]]
-- [[Entity Composer|[RUS] Entity Composer]] 
+- [[Entity Composer|[RU] Entity Composer]] 
  
