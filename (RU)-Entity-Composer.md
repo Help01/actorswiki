@@ -22,7 +22,6 @@ public class Test : MonoBehaviour
             cMotion.direction = Vector2.right;
             
             var cObject = composer.Add<ComponentObject>();
-            cObject.entity = composer.id;
             cObject.obj = gameObject;
             cObject.transform = transform;
             
