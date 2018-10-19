@@ -1,7 +1,7 @@
 ## Шаблон
 Акторы - это ECS ( entity-component-system ) шаблон со спецификой работы на движке Unity. Шаблон ECS решает множество задач в написании игр : [локальность данных](https://live13.livejournal.com/474198.html), низкая связанность кода, модульность, потенциально высокая производительность за счет сравнительно простой настройки распараллеливания вычислений. 
 
-Среди разработчиков юнити широко распространена [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) ( Object Oriented Design ) парадигма однако для оптимальной работы с ECS нужно настраивать образ мышления на [DOD](https://en.wikipedia.org/wiki/Data-oriented_design) ( Data Oriented Design ) парадигму. 
+Среди разработчиков юнити широко распространена [OOP](https://en.wikipedia.org/wiki/Object-oriented_programming) ( Object Oriented Design ) парадигма однако для оптимальной работы с ECS нужно настраивать образ мышления на [DOD](https://en.wikipedia.org/wiki/Data-oriented_design) ( Data Oriented Design ). 
 
 Разница подходов выражена в том как мы воспринимаем объекты и работаем с ними: 
 ### OOP
