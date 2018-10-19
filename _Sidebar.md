@@ -8,6 +8,6 @@
 
 ### Справка
 
-- [[Основы|[RU] Basics]]
+- [[Основы|[RU]Basics]]
 - [[Entity Composer|[RU] Entity Composer]] 
  
