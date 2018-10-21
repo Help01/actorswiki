@@ -10,4 +10,4 @@
 
 - [[Основы|(RU) Basics]]
 - [[Entity Composer|(RU) Entity Composer]] 
- 
+- [[Tags|(RU) Tags]] 
