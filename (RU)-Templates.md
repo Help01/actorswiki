@@ -25,7 +25,7 @@ namespace Homebrew
 
 ## Пример использования
 ```csharp
-    [CreateAssetMenu(fileName = "sample_weapon", menuName = "Actors/Samples/Weapon")]
+    [CreateAssetMenu(fileName = "Template Weapon", menuName = "Actors/Templates/Weapon")]
          public class TemplateWeapon : Template
          {
              [FoldoutGroup("Ammo")] public GameObject ammoPrefab;
