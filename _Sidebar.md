@@ -10,5 +10,6 @@
 ### Справка
 
 - [[Основы|(RU) Basics]]
+- [[Компоненты|(RU) Components]]
 - [[Entity Composer|(RU) Entity Composer]] 
 - [[Tags|(RU) Tags]] 
