@@ -11,5 +11,6 @@
 
 - [[Основы|(RU) Basics]]
 - [[Компоненты|(RU) Components]]
+- [[Акторы|(RU) Actors]]
 - [[Entity Composer|(RU) Entity Composer]] 
 - [[Tags|(RU) Tags]] 
