@@ -47,24 +47,41 @@ public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
 }
 ```
 
+Для того чтобы обработчик не был уничтожен тулбоксом при смене сцены используйте интерфейс IKernel
+Например:
+```csharp
+public class ProcessingTimer : ProcessingBase, IKernel
+```
+На моей практике ни разу не возникало необходимости в использовании IKernel внутри кода игры. IKernel используется внутри фреймворка для базовых обработчиков так что используя его вы должны понимать зачем вам это нужно.
+
 ## Работа с группами
 
 В 90% случаев обработчики имеют дело с группами сущностей.
-Пример:
+Пример из игры Cryoshock:
 
 ```csharp 
 public class ProcessingMotion : ProcessingBase, ITick, ITickFixed
 {
-public Group<ComponentMotion, ComponentObject> groupMotion;
+public Group<ComponentMotion, ComponentRigidbody, ComponentObject> groupMotion;
+
+public ProcessingMotion()
+{
+	groupMotion.Add += entity =>
+	{
+	var cRigid  = entity.ComponentRigidBody();
+	var cObject = entity.ComponentObject();
+	cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();
+	};
+}
 
 public void TickFixed()
 {
-        foreach (var entity in groupMotion)
-	{
-		var cMotion = entity.ComponentMotion();
-		var cObject = entity.ComponentObject();
-		cObject.transform.GetComponent<Rigidbody2D>().MovePosition(cMotion.positionTo);
-	}
+      foreach (var entity in groupMotion)
+      {
+	 var cMotion = entity.ComponentMotion();
+	 var cRigid  = entity.ComponentRigidBody();
+	 cRigid.body.MovePosition(cMotion.positionTo);
+      }
 }
 
 public void Tick()
@@ -76,9 +93,9 @@ public void Tick()
 	foreach (var entity in groupMotion)
 	{
 		var cMotion = entity.ComponentMotion();
-		var cObject = entity.ComponentObject();
+                var cRigid = entity.ComponentRigidBody();
 
-		var position = cObject.transform.position;
+		var position = cRigid.body.transform.position;
 		var velocity = cMotion.velocity;
 
 
@@ -99,7 +116,65 @@ public void Tick()
    }
 }
 ```
+Код выше работают для  всех сущностей у которых есть ComponentMotion отвечающий за движение и физику , ComponentObject отвечающий за  объект ( transform и go ), ComponentRigidbody отвечающий за Rigidbody.
  
+Наличие этих компонентов может быть у таких сущностей как игрок или монстр. 
+
+### Конструкторы
+Обработчики создаются по типу во время игры и не наследуются от классов monobehavior. Чтобы провести инициализацию обработчика используем его конструктор. Например :
+
+```csharp
+public ProcessingMotion()
+{ 
+}
+```
+
+Как правило это нужно для того чтобы добавить события для групп.
+
+### События групп
+У каждой группы есть два события:
+- Add срабатывает когда новая сущность появляется в группе.
+- Remove срабатывает когда некая сущность покидает группу.
+
+Ближайшие аналоги это методы OnEnable/OnDisable у monobehavior класса.
+
+```csharp
+public ProcessingMotion()
+{
+	groupMotion.Add += entity =>
+ {
+	var cRigid = entity.ComponentRigidBody();
+	var cObject = entity.ComponentObject();
+	cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();	
+ };
+}
+```
+
+Событие в качестве аргумента использует значение типа int символизирующий сущность.
+
+В примере всегда когда сущность добавляется к группе groupMotion работает код выше. Он назначает реальный ригидбоди объекта своему компоненту. 
+
+
+### Обработка групп
+Все группы являются IEnumerable. Для того чтобы прогнать группу нам достаточно использовать такую конструкцию:
+```csharp
+foreach (var entity in groupMotion) 
+ {
+              
+ }
+```
+где entity - сущность участвующая в группе.
+Далее, чтобы работать с компонентами достаточно вытащить их из сушности.
+```csharp
+foreach (var entity in groupInAir)
+{
+var cInAir    = entity.ComponentInAir();
+var cObject   = entity.ComponentObject();
+var cMotion   = entity.ComponentMotion();
+}
+```
+Дополнительные проверки на наличие компонента не нужны так как группы фильтруются раньше обработки. При уходе нужного компонента группа уберет сущность. Можно догадаться, что обращаясь к entity мы можем попытаться вытащить любой компонент, даже если его нет в группе, однако это небезопасно и так лучше не делать.
+
 
 
 
