@@ -99,3 +99,17 @@ namespace Homebrew
    if (entity.TryGetComponentObject(out cObject)) {
    // do stuff with cObject
    } 
+
+Одновременно достать несколько компонентов и проверить их наличие.
+
+```csharp
+	                ComponentAnimation cAnimation;
+			ComponentMotion    cMotion;
+
+			if (entity.Get(out cAnimation, out cMotion))
+			{
+				 
+			}
+```
+
+
