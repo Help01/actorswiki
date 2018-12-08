@@ -69,7 +69,7 @@ public void TickFixed()
 
 public void Tick()
 	{
-        var delta      = Time.delta;
+        var delta  = Time.delta;
                         
         var bounds = Game.roomBounds;
 			
