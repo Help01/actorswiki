@@ -55,7 +55,7 @@ public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
 ```csharp 
 public class ProcessingMotion : ProcessingBase, ITick, ITickFixed
 {
-		public Group<ComponentMotion, ComponentObject> groupMotion;
+public Group<ComponentMotion, ComponentObject> groupMotion;
 
 public void TickFixed()
 {
