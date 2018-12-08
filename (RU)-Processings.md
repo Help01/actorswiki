@@ -57,46 +57,46 @@ public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
 	{
 		public Group<ComponentMotion, ComponentObject> groupMotion;
 
-                public void TickFixed()
-		{
-			foreach (var entity in groupMotion)
-			{
-				var cMotion = entity.ComponentMotion();
-				var cObject = entity.ComponentObject();
-				cObject.transform.GetComponent<Rigidbody2D>().MovePosition(cMotion.positionTo);
-			}
-		}
+public void TickFixed()
+{
+        foreach (var entity in groupMotion)
+	{
+		var cMotion = entity.ComponentMotion();
+		var cObject = entity.ComponentObject();
+		cObject.transform.GetComponent<Rigidbody2D>().MovePosition(cMotion.positionTo);
+	}
+}
 
-                	public void Tick()
-		{
-			var delta      = Time.delta;
+public void Tick()
+	{
+        var delta      = Time.delta;
                         
-                        	var bounds = Game.roomBounds;
+        var bounds = Game.roomBounds;
 			
-			foreach (var entity in groupMotion)
-			{
-				var cMotion = entity.ComponentMotion();
-				var cObject = entity.ComponentObject();
+	foreach (var entity in groupMotion)
+	{
+		var cMotion = entity.ComponentMotion();
+		var cObject = entity.ComponentObject();
 
-				var position = cObject.transform.position;
-				var velocity = cMotion.velocity;
-
-
-				velocity.x += (0 - velocity.x) * delta / cMotion.drag;
-				velocity.y += (0 - velocity.y) * delta / cMotion.drag;
-
-				cMotion.velocity = velocity;
-
-				position.x += (cMotion.velocity.x + cMotion.direction.x * cMotion.speed) * delta;
-				position.y += (cMotion.velocity.y + cMotion.direction.y * cMotion.speed) * delta;
-
-				position.x = Mathf.Clamp(position.x, bounds.min.x, bounds.max.x);
-
-				cMotion.positionTo = position;
-			}
+		var position = cObject.transform.position;
+		var velocity = cMotion.velocity;
 
 
-         }
+		velocity.x += (0 - velocity.x) * delta / cMotion.drag;
+		velocity.y += (0 - velocity.y) * delta / cMotion.drag;
+
+		cMotion.velocity = velocity;
+
+		position.x += (cMotion.velocity.x + cMotion.direction.x * cMotion.speed) * delta;
+		position.y += (cMotion.velocity.y + cMotion.direction.y * cMotion.speed) * delta;
+
+		position.x = Mathf.Clamp(position.x, bounds.min.x, bounds.max.x);
+
+		cMotion.positionTo = position;
+	}
+
+
+   }
 }
 ```
  
