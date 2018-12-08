@@ -53,8 +53,8 @@ public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
 Пример:
 
 ```csharp 
-	public class ProcessingMotion : ProcessingBase, ITick, ITickFixed
-	{
+public class ProcessingMotion : ProcessingBase, ITick, ITickFixed
+{
 		public Group<ComponentMotion, ComponentObject> groupMotion;
 
 public void TickFixed()
