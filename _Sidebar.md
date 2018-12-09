@@ -1,6 +1,7 @@
 ### ENG
 
 - [[Framework setup|Framework setup]]
+- [[Project organization|Project orgranization]]
 
 ### RU
 
