@@ -52,9 +52,11 @@ I always put a type of script in the front. It allows understanding what the _pu
 ![Scripts naming](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
 
 ### Assets naming
-AssetType space ObjectType space ObjectPointer space Index
-For example: Animation Enemy Attack, Sample Weapon 2
+AssetType ObjectType ObjectPointer Index
+
+_For example_
+Animation Enemy Attack, Sample Weapon 2
 
 ![Example](https://i.gyazo.com/e063a7922892cd70e3e7551c1b145315.png)
 
-PS You can have your own rules. From my point of view it's eccential. Discipline, transparency and flatness helps to organize project better. 
+PS You can have your own rules. From my point of view, it's essential. Discipline, transparency, and flatness help to organize the project better. 
