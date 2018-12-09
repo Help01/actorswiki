@@ -1,54 +1,57 @@
 ## Assembly Definition
 The framework contains some [Assembly Definition](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html) dynamic libraries. If you don't want use those be sure to delete them.
  
-Это ускоряет время компиляции скриптов так как не нужно будет пересобирать весь проект каждый раз при редактировании скрипта. Так же это позволяет явно разделить зоны ответственности проекта и не позволит пихать что-то связанное с игрой в область фреймворка и наоборот. Однако этот паттерн работает только если вы будете _везде_ придерживаться правил Assembly Definition. 
+Usually, Assembly Definition speeds up compilation time of scripts, but it will work if you use Assembly Definition _everywhere_ in the project.
 
-Вам потребуется как минимум по одному ASM файлу на корневую папку. Если вы используете Editor папки то обязательно нужно создать дополнительный ASM под эту папку Editor , указать что она работает только в редакторе и связать ее с ASM уровнем выше.
+The other case of using Assembly Definition is to divide your scripts into domains strictly. It allows you not to mix scripts from the framework and your game. 
+ 
 
-Правила оформления ASM:
-- Namespace.Source <- обычные asm
-- Namespace.Source.Editor <- asm редактора
+Naming conventions in the framework:
+- Namespace.Source
+- Namespace.Source.Editor <- for editor folders.
 
-![Пример ASM](https://i.gyazo.com/e8980bba613d5604546e615740935bf7.png)
+![Example](https://i.gyazo.com/e8980bba613d5604546e615740935bf7.png)
 
-## Структура папок
-* [0]Framework - ASM Homebrew.Framework 
-    * Common - Здесь лежат библиотеки написанные разработчиком, файлы общего назначения ( например документация )
-    * Runtime - "Тело" фреймворка. Здесь содержится вся логика работы с фреймворком. Сюда стоит залезать только чтобы расширить функционал фреймворка или что-то поправить. Фреймворк никак не связан с игрой и не "видит" ее.
+## Folder structure
+* [0]Framework - Homebrew.Framework 
+    * Common - I use the Common folder for documentation, misc files, and libraries that I write myself.
+    * Runtime -  The framework core. All framework logic is here. Edit scripts from this folder only if you need to extend the framework. Also be sure not to include any game scripts here.
 
-* [1]Source - ASM Homebrew.Game (Ref: Homebrew.Framework )
+* [1]Source - Homebrew.Game ( Ref: Homebrew.Framework )
+It is the folder with your game source. If you are using Assembly Definition be sure to link other Assembly Definition files to the Homebrew.Game. ( Unity.TextMeshPro for example. It can be found in Packages/TextMeshPro/Scripts/Runtime )
 
-Это папка с исходниками игры. Тут лежат все скрипты напрямую связанные с проектом. Для того чтобы игра "видела" фреймворк в Homebrew.Game должны быть ссылки на Homebrew.Framework и по необходимости другие ASM. Так например если вы хотите использовать TextMesh Pro то должны подключить его библиотеку Unity.TextMeshPro _( расположена в Packages/TextMeshPro/Scripts/Runtime )_ к Homebrew.Game.
-
-* [2]Content - Здесь хранятся все ресурсы по игре: графика, звуки, анимации, шрифты. Структура нижеуказанных папок обязательна для работы с фреймворком.
+* [2]Content - All non-coding resources that you want to use in the game. 
     * Resources
         * Data
-             * Blueprints - Здесь хранятся схемы и ассет с настройками для схем
-        * Prefabs - Сюда кладем префабы к которым хотим обращаться.
-    * Scenes - Папка с сценами проекта.
+             * Blueprints 
+        * Prefabs 
+    * Scenes 
 
-* [3]ThirdParty - Если у вас есть купленные библиотеки то по умолчанию их можно класть сюда. Это необязательная папка.
-* Plugins - Папка плагинов. Традиционно используется для нейтив библиотек написанных на других языках. 
-* Streaming Assets - После сборки проекта эта папка будет в него добавлена. Это позволяет использовать ресурсы из этой папки в оригинальном формате. Полезно для моддинга. 
+* [3]ThirdParty - For all assets that you bought/downloaded.
+* Plugins - Unity folder for native plugins.
+* Streaming Assets 
 
-Узнать больше о папках предусмотренных Unity можно в разделе [SpecialFolders](https://docs.unity3d.com/Manual/SpecialFolders.html)
+You can learn more about Unity folders from the
+[SpecialFolders](https://docs.unity3d.com/Manual/SpecialFolders.html) link.
 
-Это рекомендуемая настройка папок, однако можно следовать своей структуре, но папки [2]Content/Resources/Prefabs и [2]Content/Resources/Data должны быть. Так же если вы хотите адекватно обновлять фреймворк с гитхаба структура папки [0]Framework обязательна.
+Right now it's essential to have [2]Content folder with Resources/Prefabs and Resources/Data folders. 
+ 
+##  Naming conventions
+_Optional_
+Conventions based on my own experience of working with Unity.
 
-## Названия файлов
-Это необязательный пункт. Основан на моем личном опыте работы с проектами. С точки зрения разработчика и проекта в целом смысловые названия файлов не имеют ценности: разные люди могут интерпритировать название по-разному. На первый план выходит хранение файлов по типу, быстрый поиск и прозрачность.
 
-### Названия скриптов
-Начинаются с вида скрипта. Это позволяет понять о чем скрипт не залезая внутрь. В рамках фреймворка где компоненты строго разделены по своему функционалу это имеет смысл.
+### Script naming
+I always put a type of script in the front. It allows understanding what the _purpose_ of the script is. In ECS paradigm where components and logic strictly divided it makes sense.
+ 
 
-* Все акторы начинаются со слова Actor : ActorPlayer, ActorEnemy1, ActorEnemy2, ActorTank, ActorSpaceShip, ActorAsteroid
-* Все компоненты данных начинаются с Data : DataPlayer, DataView, DataMove, DataWeapon
-* Все обработчики начинаются с Processing : ProcessingAmmo, ProcessingAI, ProcessingMove
-* Все сигналы начинаются с Signal : SignalDamage, SignalJobsDone
-* Все компоненты Unity : ComponentTag, ComponentAnimationEvents
-* И так далее для любого типа скрипта: Sample,Blueprint,Factory
+* All actors start with the _actor_ word: ActorPlayer, ActorEnemy1, ActorEnemy2, ActorTank, ActorSpaceShip, ActorAsteroid
+* All components start with the _component_ word : ComponentPlayer, ComponentView, ComponentMotion, ComponentWeapon
+* All systems, controllers, managers start with the _processing_ word :  ProcessingAI, ProcessingMotion, ProcessingRender
+* All signals start with the _signal_ word : SignalDamage, SignalJobsDone
+* The same for all other types: Sample,Blueprint,Factory
 
-![Названия скриптов](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
+![Scripts naming](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
 
 Следуя этому правилу очень легко запомнить, что все "менеджеры и контроллеры" фреймворка начинаются со слов Processing. Так, захотев воспользоваться сигналами в фреймворке вы уже будете искать что-то типа ProcessingSignals.
 
