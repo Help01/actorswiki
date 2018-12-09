@@ -5,7 +5,6 @@ Usually, Assembly Definition speeds up compilation time of scripts, but it will 
 
 The other case of using Assembly Definition is to divide your scripts into domains strictly. It allows you not to mix scripts from the framework and your game. 
  
-
 Naming conventions in the framework:
 - Namespace.Source
 - Namespace.Source.Editor <- for editor folders.
@@ -44,22 +43,18 @@ Conventions based on my own experience of working with Unity.
 ### Script naming
 I always put a type of script in the front. It allows understanding what the _purpose_ of the script is. In ECS paradigm where components and logic strictly divided it makes sense.
  
-
 * All actors start with the _actor_ word: ActorPlayer, ActorEnemy1, ActorEnemy2, ActorTank, ActorSpaceShip, ActorAsteroid
-* All components start with the _component_ word : ComponentPlayer, ComponentView, ComponentMotion, ComponentWeapon
-* All systems, controllers, managers start with the _processing_ word :  ProcessingAI, ProcessingMotion, ProcessingRender
-* All signals start with the _signal_ word : SignalDamage, SignalJobsDone
-* The same for all other types: Sample,Blueprint,Factory
+* All components start with the _component_ word: ComponentPlayer, ComponentView, ComponentMotion, ComponentWeapon
+* All systems, controllers, managers start with the _processing_ word: ProcessingAI, ProcessingMotion, ProcessingRender
+* All signals start with the _signal_ word: SignalDamage, SignalJobsDone
+* The same for all other types: Sample, Blueprint, Factory
 
 ![Scripts naming](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
 
-Следуя этому правилу очень легко запомнить, что все "менеджеры и контроллеры" фреймворка начинаются со слов Processing. Так, захотев воспользоваться сигналами в фреймворке вы уже будете искать что-то типа ProcessingSignals.
+### Assets naming
+AssetType space ObjectType space ObjectPointer space Index
+For example: Animation Enemy Attack, Sample Weapon 2
 
-### Названия ассетов и префабов.
-ТИП АССЕТА пробел ТИП пробел УКАЗАТЕЛЬ пробел ИНДЕКС
-Например : Animation Enemy Attack, Sample Weapon 2
+![Example](https://i.gyazo.com/e063a7922892cd70e3e7551c1b145315.png)
 
-![Пример](https://i.gyazo.com/e063a7922892cd70e3e7551c1b145315.png)
-
-
-PS Не ленитесь использовать готовые паттерны по названиям или разрабатывать свои. С ростом проекта растут и издержки на его поддержание. Дисциплина, прозрачность, единообразие являются залогом более продуктивной и устойчивой работы.
+PS You can have your own rules. From my point of view it's eccential. Discipline, transparency and flatness helps to organize project better. 
