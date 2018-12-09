@@ -1,6 +1,6 @@
 ### RU
 
-- [[Установка фреймворка|Установка фреймворка]]
+- [[Установка фреймворка|(RU) Framework install]]
 - [[Организация проекта|(RU) Project organization]]
 - [[Организация сцен|(RU) Scene organization]]
 - [[Фабрики|(RU) Factory]]
