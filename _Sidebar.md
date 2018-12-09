@@ -1,6 +1,6 @@
 ### ENG
 
-- [[Framework installation|Framework installation]]
+- [[Framework setup|Framework setup]]
 
 ### RU
 
