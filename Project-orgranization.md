@@ -52,10 +52,10 @@ I always put a type of script in the front. It allows understanding what the _pu
 ![Scripts naming](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
 
 ### Assets naming
-AssetType ObjectType ObjectPointer Index
+AssetType ObjectType ObjectPointers Index
 
 _For example_
-Animation Enemy Attack, Sample Weapon 2
+Animation Enemy Attack, Template Weapon 2
 
 ![Example](https://i.gyazo.com/e063a7922892cd70e3e7551c1b145315.png)
 
