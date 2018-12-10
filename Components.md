@@ -1,4 +1,4 @@
-## Components
+## Component
 A component is a game brick with some game variables. In ACTORS framework components often used with _[Serializable]_  attribute for easy editing via unity inspector.
 
 ## Component template
