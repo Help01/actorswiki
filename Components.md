@@ -1,7 +1,37 @@
 ## Components
-Компонент - это кирпич игры описывающий некий набор переменных которыми будет обладать сущность.
-Во фреймворке компоненты часто пишутся с атрибутом _[Serializable]_ для того чтобы редактировать поля в инспекторе Unity.
+A component is a game brick with some game variables. In ACTORS framework components often used with _[Serializable]_  attribute for easy editing via unity inspector.
 
+## Component template
+Where {NAME} - is the name of a component. 
+The most convenient way will be making template inside of your IDE for fast generating.
+ 
+```csharp
+namespace Homebrew
+{
+    public class Component{NAME} : IComponent
+{
+   // тело
+}
+
+  public static partial class Game
+    {
+        public static Component{NAME} Component{NAME}(this int entity)
+        {
+            return Storage<Component{NAME}>.Instance.components[entity];
+        }
+ 
+        public static bool HasComponent{NAME}(this int entity)
+        {
+            return          Storage<Component{NAME}>.Instance.HasComponent(entity);
+        }
+    }
+
+
+}
+``` 
+
+
+ 
 По умолчанию с фреймворком идет **один** компонент: ComponentObject
 
 ```csharp
@@ -46,38 +76,7 @@ namespace Homebrew
 Этот компонент самостоятельно добавляется при наличии Actor класса на объекте. Компонент отвечает за связь сущности с GO 
 `(GameObject)`
 
-## Шаблон компонента
-Где {НАЗВАНИЕ} - имя компонента. Самым удобным способом будет создать шаблон внутри вашего IDE для быстрого создания компонентов.
-```csharp
-namespace Homebrew
-{
-    public class Component{НАЗВАНИЕ} : IComponent
-{
-   // тело
-}
-
-  public static partial class Game
-    {
-        public static Component{НАЗВАНИЕ} Component{НАЗВАНИЕ}(this int entity)
-        {
-            return Storage<Component{НАЗВАНИЕ}>.Instance.components[entity];
-        }
-
-        public static bool TryGetComponent{НАЗВАНИЕ}(this int entity, out Component{НАЗВАНИЕ} component)
-        {
-            component = Storage<Component{НАЗВАНИЕ}>.Instance.TryGet(entity);
-            return component != null;
-        }
-
-        public static bool HasComponent{НАЗВАНИЕ}(this int entity)
-        {
-            return Storage<Component{НАЗВАНИЕ}>.Instance.HasComponent(entity);
-        }
-    }
-
-
-}
-```
+ 
 
 ## Как обращаться к компонентам
 Проведу аналогию с Unity: раньше мы делали что-то вроде `gameobject.GetComponent<{НАЗВАНИЕ}>()` - `gameobject` выступал в роли сущности. Теперь `gameobject` сам является лишь частью сущности.  
