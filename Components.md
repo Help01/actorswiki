@@ -10,10 +10,10 @@ namespace Homebrew
 {
     public class Component{NAME} : IComponent
 {
-   // тело
+   // body
 }
 
-  public static partial class Game
+  public static  class ExtenstionComponent{Name}
     {
         public static Component{NAME} Component{NAME}(this int entity)
         {
@@ -22,14 +22,14 @@ namespace Homebrew
  
         public static bool HasComponent{NAME}(this int entity)
         {
-            return          Storage<Component{NAME}>.Instance.HasComponent(entity);
+            return Storage<Component{NAME}>.Instance.HasComponent(entity);
         }
     }
-
-
 }
 ``` 
+An example:
 
+```csharp
 
  
 По умолчанию с фреймворком идет **один** компонент: ComponentObject
