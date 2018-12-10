@@ -13,7 +13,7 @@ namespace Homebrew
    // body
 }
 
-  public static  class ExtenstionComponent{Name}
+  public static  class ExtenstionComponent{NAME}
     {
         public static Component{NAME} Component{NAME}(this int entity)
         {
@@ -30,7 +30,24 @@ namespace Homebrew
 An example:
 
 ```csharp
+using System;
+namespace Homebrew
+{
+	[Serializable]
+	public class ComponentHealth : IComponent
+	{
+		public int HP = 1;
+		public int HPMax = 5;
+	}
 
+	public static class ExtensionComponentHealth
+	{
+		public static ComponentHealth ComponentHealth(this int entity) { return Storage<ComponentHealth>.Instance.components[entity]; }
+
+		public static bool HasComponentHealth(this int entity) { return Storage<ComponentHealth>.Instance.HasComponent(entity); }
+	}
+}
+```
  
 По умолчанию с фреймворком идет **один** компонент: ComponentObject
 
