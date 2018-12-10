@@ -109,7 +109,7 @@ _I will add more info about how to add components and work with actor/entity com
 
 ## Interface ISetup
 Use ```ISetup``` when you want to add initialization logic to your component.
-Setup method will be automatically handled once component added to an entity.
+The framework will handle the setup method when a component added to an entity.
 ```csharp
 [Serializable]
 	public class ComponentHealth : IComponent, ISetup
@@ -120,54 +120,15 @@ Setup method will be automatically handled once component added to an entity.
 
 		public void Setup(int entity)
 		{
+// strange example
 			animator = entity.GameObject().GetComponent<Animator>(); 	
 		}
 	}
 ```
+## Component Object
+The framework already have one component to use. It's ```ComponentObject```. 
+ComponentObject represents unity game object and transform. Actor class will automatically add this component when created. 
 
-По умолчанию с фреймворком идет **один** компонент: ComponentObject
-
-```csharp
-namespace Homebrew
-{
-    public class ComponentObject : IComponent, IDisposable
-    {
-        public Transform transform;
-        public GameObject obj;
-
-        internal Dictionary<int, Transform> cachedTransforms;
-
-        public void Dispose()
-        {
-            transform = null;
-            obj = null;
-            cachedTransforms.Clear();
-        }
-    }
-
-    public static partial class Game
-    {
-        public static ComponentObject ComponentObject(this int entity)
-        {
-            return Storage<ComponentObject>.Instance.components[entity];
-        }
-
-        public static bool TryGetComponentObject(this int entity, out ComponentObject component)
-        {
-            component = Storage<ComponentObject>.Instance.TryGet(entity);
-            return component != null;
-        }
-
-        public static bool HasComponentObject(this int entity)
-        {
-            return Storage<ComponentObject>.Instance.HasComponent(entity);
-        }
-    }
-}
-```
-
-Этот компонент самостоятельно добавляется при наличии Actor класса на объекте. Компонент отвечает за связь сущности с GO 
-`(GameObject)`
 
  
  
