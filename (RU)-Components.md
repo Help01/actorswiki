@@ -56,26 +56,18 @@ namespace Homebrew
    // тело
 }
 
-  public static partial class Game
+  public static  class ExtenstionComponent{НАЗВАНИЕ}
     {
         public static Component{НАЗВАНИЕ} Component{НАЗВАНИЕ}(this int entity)
         {
             return Storage<Component{НАЗВАНИЕ}>.Instance.components[entity];
         }
-
-        public static bool TryGetComponent{НАЗВАНИЕ}(this int entity, out Component{НАЗВАНИЕ} component)
-        {
-            component = Storage<Component{НАЗВАНИЕ}>.Instance.TryGet(entity);
-            return component != null;
-        }
-
+ 
         public static bool HasComponent{НАЗВАНИЕ}(this int entity)
         {
             return Storage<Component{НАЗВАНИЕ}>.Instance.HasComponent(entity);
         }
     }
-
-
 }
 ```
 Пример:
