@@ -28,7 +28,6 @@ namespace Homebrew
 }
 ``` 
 An example:
-
 ```csharp
 using System;
 namespace Homebrew
@@ -51,6 +50,27 @@ namespace Homebrew
 
 [![Component example](https://i.gyazo.com/da2aa114339d78ce8152f3990eb9499b.gif)](https://gyazo.com/da2aa114339d78ce8152f3990eb9499b) 
 
+## How to get components
+Components can be "taken" from an entity.
+```csharp
+   var entity = 0;  // entity with id 0;
+   var cObject = entity.ComponentObject(); // taking ComponentObject without any checks.
+```
+Check if an entity has component:
+```csharp
+   var entity = 0;  // entity with id 0;
+   if (entity.HasComponentObject()) {} // return bool
+```
+Check if an entity has one ore more components and get them.
+ ```csharp
+ComponentAnimation cAnimation;
+ComponentMotion    cMotion;
+
+if (entity.Get(out cAnimation, out cMotion))
+{
+	// do something			 
+}
+```
 
 По умолчанию с фреймворком идет **один** компонент: ComponentObject
 
@@ -111,15 +131,6 @@ namespace Homebrew
    var entity = 0;  // берем первую сущность на сцене
    if (entity.HasComponentObject()) {} // проверяем наличие
 ```
-Одновременно достать компонент и проверить его наличие.
-```csharp
-   var entity = 0;  // берем первую сущность на сцене
-   ComponentObject cObject;  
-   if (entity.TryGetComponentObject(out cObject)) {
-   // do stuff with cObject
-   } 
-```
-
 Одновременно достать несколько компонентов и проверить их наличие.
  
 ```csharp
