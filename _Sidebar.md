@@ -3,6 +3,10 @@
 - [[Framework setup|Setup]]
 - [[Project organization|Project orgranization]]
 
+### Manual
+
+- [[Components|Components]]
+
 ### RU
 
 - [[Установка фреймворка|(RU) Framework setup]]
