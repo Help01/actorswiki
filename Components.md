@@ -48,7 +48,10 @@ namespace Homebrew
 	}
 }
 ```
- 
+
+[![Component example](https://i.gyazo.com/da2aa114339d78ce8152f3990eb9499b.gif)](https://gyazo.com/da2aa114339d78ce8152f3990eb9499b) 
+
+
 По умолчанию с фреймворком идет **один** компонент: ComponentObject
 
 ```csharp
