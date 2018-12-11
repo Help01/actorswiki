@@ -6,6 +6,7 @@
 ### Manual
 
 - [[Components|Components]]
+- [[Processings|Processings]]
 
 ### RU
 
