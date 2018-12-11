@@ -1,5 +1,3 @@
-## Processing
-
 In the framework, all ```System```, ```Manager```, ```Controller``` classes are called ```Processing```.
  
 ## How to create
