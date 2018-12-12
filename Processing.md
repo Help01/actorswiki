@@ -31,7 +31,25 @@ public class StarterLevel1: Starter
          }
 }
 ```
+## Updates
+- Use ```ITick``` interface to add Update to your class.
+- Use ```ITickFixed``` interface to add Fixed Update to your class.
+- Use ```ITickLate``` interface to add Late Update to your class.
 
+```csharp
+public class ProcessingPlayer : ProcessingBase, ITick
+```
+## Signals
+Signals allow you to communicate between decoupled parts of the game in Unity3d. You can learn more about signals by following this [link](https://github.com/dimmpixeye/Unity3d-Signals).
+
+- Use ```IRecieve<Type>``` where Type is a struct.
+
+```csharp
+public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
+{
+	public void HandleSignal(ref SignalDamage arg){}
+}
+```
 
 
 
