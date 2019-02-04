@@ -59,4 +59,4 @@ Animation Enemy Attack, Template Weapon 2
 
 ![Example](https://i.gyazo.com/e063a7922892cd70e3e7551c1b145315.png)
 
-PS You can have your own rules. From my point of view, it's essential. Discipline, transparency, and flatness help to organize the project better. 
+PS You can have your own rules. From my point of view, it's essential. Discipline, transparency, sameness and flatness help to organize the project better. 
