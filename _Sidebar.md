@@ -2,7 +2,7 @@
 
 - [[Framework setup|Setup]]
 - [[Project organization|Project orgranization]]
-
+- [[Scene organization|Scene organization]]
 ### Manual
 
 - [[Components|Components]]
