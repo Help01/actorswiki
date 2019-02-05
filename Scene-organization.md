@@ -1,4 +1,4 @@
-## The framework is based on multiscenes.
+## The framework is based on [multiscenes](https://docs.unity3d.com/Manual/MultiSceneEditing.html)..
 
 There are two variants of scenes:
 * Main
