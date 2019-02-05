@@ -1,8 +1,8 @@
-The framework is based on multiscenes.
+##The framework is based on multiscenes.
 
 There are two variants of scenes:
-Main
-Secondary
+*Main
+*Secondary
 
 The main scenes are all the scenes in which the component “Starter” or the component inherited from “Starter” will be present.
 
