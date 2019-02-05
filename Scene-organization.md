@@ -1,4 +1,5 @@
-## The framework is based on [multiple Scenes](https://docs.unity3d.com/Manual/MultiSceneEditing.html)..
+## Multiple Scenes
+The framework is based on [multiple Scenes](https://docs.unity3d.com/Manual/MultiSceneEditing.html).
 
 There are two variants of scenes:
 * Main
