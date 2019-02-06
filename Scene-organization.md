@@ -13,6 +13,6 @@ Each of the main scenes always has the following structure:
 * [SCENE] is the “root” of the main scene.
   * Dynamic - all created GO (GameObject) will be loaded here during the game session.
 
-The scenes of the framework by default do not contain a camera as it is supposed to use a separate scene with a camera.
+All the scenes of the framework by default do not contain a camera as it is supposed to use a separate scene with a camera.
 
 to be continued =)
