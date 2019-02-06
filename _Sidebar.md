@@ -1,7 +1,7 @@
 ### ENG
 
 - [[Framework setup|Setup]]
-- [[Project organization|Project orgranization]]
+- [[Project orgranization|Project organization]]
 - [[Scene organization|Scene organization]]
 ### Manual
 
