@@ -7,7 +7,7 @@ There are two variants of scenes:
 
 The main scenes are all the scenes in which the component “Starter” or the component inherited from “Starter” will be present.
 
-Any main scene always has the following structure:
+Every main scene always has the following structure:
 
 * [SETUP] – The “Starter” component is added to this object, it is allowed to use SETUP for other components of settings.
 * [SCENE] is the “root” of the level.
