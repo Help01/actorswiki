@@ -19,4 +19,5 @@ All the scenes of the framework by default do not contain a camera as it is supp
 ![Стартер](https://i.gyazo.com/9f8964dad3333abbe57a9d3f35c3cc5e.png)
 Starter is an essential component. When the scenes are loaded or changed, Starter is processed first. Its functions include the initialization of handlers for the current level, the management of additional scenes at the start, the starter is responsible for which scenes can remain after the main scene is closed.
 
+The Starter serves as a single entry point into the program (level) - all the components inherited from Actor or Monocached will be initialized after the Starter.
 to be continued =)
