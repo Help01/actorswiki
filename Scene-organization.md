@@ -15,6 +15,6 @@ Each of the main scenes always has the following structure:
 
 All the scenes of the framework by default do not contain a camera as it is supposed to use a separate scene with a camera.
 
-## Стартер
+## Starter
 ![Стартер](https://i.gyazo.com/9f8964dad3333abbe57a9d3f35c3cc5e.png)
 to be continued =)
