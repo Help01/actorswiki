@@ -9,7 +9,7 @@ The main scenes are all the scenes in which the component “Starter” or the c
 
 Each of the main scenes always has the following structure:
 
-* [SETUP] – The “Starter” component is added to this object, it is allowed to use SETUP for other components of settings.
+* [SETUP] – The component “Starter” is added to this object, it is allowed to use SETUP for other components of settings.
 * [SCENE] is the “root” of the main scene.
   * Dynamic - all created GO (GameObject) will be loaded here during the game session.
 
