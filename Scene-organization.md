@@ -15,7 +15,7 @@ Each of the main scenes always has the following structure:
 
 All the scenes of the framework by default do not contain a camera as it is supposed to use a separate scene with a camera.
 
-## Starter
+## The component “Starter”
 ![Стартер](https://i.gyazo.com/9f8964dad3333abbe57a9d3f35c3cc5e.png)
 Starter is an essential component. When the scenes are loaded or changed, the "Starter" component is processed first. Its functions include the initialization of handlers for the current level, the management of additional scenes at the start. The starter is responsible for which scenes can remain after the main scene is closed.
 
