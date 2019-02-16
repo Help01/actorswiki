@@ -22,5 +22,5 @@ All the scenes of the framework by default do not contain a camera as it is supp
 Each of the starters serves as a single entry point into the program (the game level) - all the components inherited from Actor or Monocached will be initialized after the starters.
 
 In the picture (see below) I want the Scene Kernel, the Scene Camera and the scene with room to be added to the scene.
-
+![Стартер 2](https://i.gyazo.com/b96b3c8ea695dd0bedb384f237d1dad0.png)
 to be continued =)
