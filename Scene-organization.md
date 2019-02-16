@@ -23,7 +23,7 @@ Each of the starters serves as a single entry point into the program (e.g. the g
 
 The following public variables are responsible for:
 * Scenes To Keep - which scenes should remain after the transition from this scene.
-* Scenes Depends On - what scenes should be added with the transition to this scene.
+* Scenes Depends On - which scenes should be added with the transition to this scene.
 
 In the picture (see below) I want the Scene Kernel, the Scene Camera and the scene with room to be added to the scene.
 ![Стартер 2](https://i.gyazo.com/b96b3c8ea695dd0bedb384f237d1dad0.png)
