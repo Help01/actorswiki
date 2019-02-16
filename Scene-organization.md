@@ -17,9 +17,9 @@ All the scenes of the framework by default do not contain a camera as it is supp
 
 ## The component “Starter”
 ![Стартер](https://i.gyazo.com/9f8964dad3333abbe57a9d3f35c3cc5e.png)
-"Starter" is an essential component. When the scenes are loaded or changed, the component "Starter" is processed first. Its functions include the initialization of handlers for the current level, the management of the additional (secondary) scenes at the beginning. The starters are responsible for which scenes can remain after the main scenes are closed.
+"Starter" is an essential component. When the scenes are loaded or changed, the component "Starter" is processed first. Its functions include the initialization of handlers for the current scene, the management of the additional (secondary) scenes at the beginning. The starters are responsible for which scenes can remain after the main scenes are closed.
 
-Each of the starters serves as a single entry point into the program (the game level) - all the components inherited from Actor or Monocached will be initialized after the starters.
+Each of the starters serves as a single entry point into the program (e.g. the game level scene) - all the components inherited from Actor or Monocached will be initialized after the starters.
 
 In the picture (see below) I want the Scene Kernel, the Scene Camera and the scene with room to be added to the scene.
 ![Стартер 2](https://i.gyazo.com/b96b3c8ea695dd0bedb384f237d1dad0.png)
