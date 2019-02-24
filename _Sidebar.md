@@ -24,4 +24,4 @@
 - [[Обработчики|(RU) Processings]]
 - [[Акторы|(RU) Actors]]
 - [[Entity Composer|(RU) Entity Composer]] 
-- [[Tags|(RU) Tags]] 
+- [[Тэги|(RU) Tags]] 
