@@ -56,7 +56,7 @@ public class StarterLevel1 : Starter
     }
 
 ```
-When we change one main scene to another, all the handlers added to the scene are unloaded from the system.
+When we move from one main scene to another, all the handlers added to the scene are unloaded from the system.
 
 ## Building Settings
 
