@@ -58,6 +58,11 @@ public class StarterLevel1 : Starter
 ```
 When we change one main scene to another, all the handlers added to the scene are unloaded from the system.
 
+## Building Settings
+
+Не забудьте указывать/проверять ваши сцены в Building Settings.
+Порядок сцен не важен, просто убедитесь, что первой идет сцена с которой вы хотите начать игру.
+
 ## Scene Kernel
 
 Отдельно стоит упомянуть Scene Kernel. Это корневая сцена. Из нее идет инициализация фреймворка, плагинов, шаблонов. Без этой сцены ничего работать не будет и она всегда должна присутствовать как в Scenes Depends On так и в Scenes To Keep на основных сценах.
