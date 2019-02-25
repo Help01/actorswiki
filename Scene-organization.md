@@ -60,8 +60,7 @@ When we change one main scene to another, all the handlers added to the scene 
 
 ## Building Settings
 
-Не забудьте указывать/проверять ваши сцены в Building Settings.
-Порядок сцен не важен, просто убедитесь, что первой идет сцена с которой вы хотите начать игру.
+Remember to specify / check your scenes in Building Settings. The order of the scenes is not important, just make sure that the scene that starts your game is first in the list of scenes.
 
 ## Scene Kernel
 
