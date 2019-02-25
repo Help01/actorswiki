@@ -29,4 +29,5 @@ In the picture (see below) I want the Scene Kernel, the Scene Camera and the sce
 ![Стартер 2](https://i.gyazo.com/b96b3c8ea695dd0bedb384f237d1dad0.png)
 How to work with the scene if there is no camera added to it but you need the camera to be? You can easily drag the camera scene into the hierarchy. When you start the game from the editor, the framework will detect that such a scene already exists and will not re-add it.
 
+## Creating new scenes
 to be continued...
