@@ -30,4 +30,31 @@ In the picture (see below) I want the Scene Kernel, the Scene Camera and the sce
 How to work with the scene if there is no camera added to it but you need the camera to be? You can easily drag the camera scene into the hierarchy. When you start the game from the editor, the framework will detect that such a scene already exists and will not re-add it.
 
 ## Creating new scenes
+Tools->Actors->Add->Scene
+
+[![Создание новых сцен](https://i.gyazo.com/98602454af6ebf11cbb8a1048de87bd0.gif)](https://gyazo.com/98602454af6ebf11cbb8a1048de87bd0)
+
+Укажите путь и название сцены в появившемся окошке.
+
+![Создание новый сцен 2](https://i.gyazo.com/83802bb527796edb65a413d275b4bd3a.png)
+
+Для регистрации обработчиков используйте метод Setup. Если вам нужен аналог Start метода используйте PostSetup.
+
+```csharp
+public class StarterLevel1 : Starter 
+{
+    protected override void Setup()
+    {
+        Add<ProcessingCamera>();
+        Add<ProcessingPlayers>();
+        Add<ProcessingInputConnect>();
+    }
+
+   protected override void PostSetup()
+    {
+        var player = FindObjectOfType<ActorPlayer>();   
+    }
+
+```
+Когда мы переходим с одной основной сцены на другую то все обработчики добавленные на сцену выгружаются из системы.
 to be continued...
