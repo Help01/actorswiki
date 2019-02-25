@@ -64,9 +64,9 @@ Remember to specify / check your scenes in Building Settings. The order of the s
 
 ## Scene Kernel
 
-Отдельно стоит упомянуть Scene Kernel. Это корневая сцена. Из нее идет инициализация фреймворка, плагинов, шаблонов. Без этой сцены ничего работать не будет и она всегда должна присутствовать как в Scenes Depends On так и в Scenes To Keep на основных сценах.
+It`s worth mentioning 'Scene Kernel'. This is the root scene. From it comes the initialization of the framework, plug-ins, templates. Without this scene, nothing will work and it must always be present both in 'Scenes Depends On' and in 'Scenes To Keep' on the main scenes.
 
-В Scene Kernel лучше ничего не класть, особенно связанное с игрой.
+In Scene Kernel it is better not to put anything, especially associated with the game.
 
 
 ## Из книги рецептов
