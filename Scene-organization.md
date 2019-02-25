@@ -69,5 +69,5 @@ It`s particularly worth mentioning 'Scene Kernel'. It is the root scene. From it
 In Scene Kernel it is better not to put anything, especially everything that associated with the game.
 
 
-## From the recipe book
+## From the Cook-Book
 [Methods for working with scenes](https://github.com/dimmpixeye/Unity3d-Cook-Book/blob/master/ACTORS%20scenes.md)
