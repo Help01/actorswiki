@@ -3,6 +3,7 @@
 - [[Framework setup|Setup]]
 - [[Project organization|Project organization]]
 - [[Scene organization|Scene organization]]
+- [[Factory|Factory]]
 ### Manual
 
 - [[Components|Components]]
