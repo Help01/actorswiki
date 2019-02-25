@@ -71,5 +71,3 @@ In Scene Kernel it is better not to put anything, especially associated with the
 
 ## From the recipe book
 [Methods for working with scenes](https://github.com/dimmpixeye/Unity3d-Cook-Book/blob/master/ACTORS%20scenes.md)
-
-to be continued...
