@@ -34,11 +34,11 @@ Tools->Actors->Add->Scene
 
 [![Создание новых сцен](https://i.gyazo.com/98602454af6ebf11cbb8a1048de87bd0.gif)](https://gyazo.com/98602454af6ebf11cbb8a1048de87bd0)
 
-Укажите путь и название сцены в появившемся окошке.
+Enter the name and the pathname of the added scene in the “New scene” window.
 
 ![Создание новый сцен 2](https://i.gyazo.com/83802bb527796edb65a413d275b4bd3a.png)
 
-Для регистрации обработчиков используйте метод Setup. Если вам нужен аналог Start метода используйте PostSetup.
+Use the method 'Setup' for the registration of handlers. Use PostSetup if you need the analogue of the function 'Start' ( MonoBehaviour.Start() ).
 
 ```csharp
 public class StarterLevel1 : Starter 
@@ -56,5 +56,5 @@ public class StarterLevel1 : Starter
     }
 
 ```
-Когда мы переходим с одной основной сцены на другую то все обработчики добавленные на сцену выгружаются из системы.
+When we change one main scene to another, all the handlers added to the scene are unloaded from the system.
 to be continued...
