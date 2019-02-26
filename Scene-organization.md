@@ -17,7 +17,7 @@ All the scenes of the framework by default do not contain a camera as it is supp
 
 ## The component “Starter”
 ![Стартер](https://i.gyazo.com/9f8964dad3333abbe57a9d3f35c3cc5e.png)
-"Starter" is an essential component. When the scenes are loaded or changed, the component "Starter" is processed first. Its functions include the initialization of handlers (Proccessing) for the current scene and the management of the additional (secondary) scenes at the beginning of the Play mode running. The starters are responsible for which scenes can remain after the main scenes are closed.
+"Starter" is an essential component. When the scenes are loaded or changed, the component "Starter" is processed first. Its functions include the initialization of handlers ([Proccessing](https://github.com/dimmpixeye/ecs/wiki/Processing)) for the current scene and the management of the additional (secondary) scenes at the beginning of the Play mode running. The starters are responsible for which scenes can remain after the main scenes are closed.
 
 Each of the starters serves as a single entry point into the program (e.g. the game level scene) - all the components inherited from Actor or Monocached will be initialized after the starters.
 
