@@ -38,7 +38,7 @@ Enter the name and the pathname of the added scene in the “New scene” window
 
 ![Создание новый сцен 2](https://i.gyazo.com/83802bb527796edb65a413d275b4bd3a.png)
 
-Use the method 'Setup' for the registration of handlers. Use 'PostSetup' if you need the analogue of the function 'Start' ( MonoBehaviour.Start() ).
+Use the method 'Setup' for the registration of handlers ([Proccessing](https://github.com/dimmpixeye/ecs/wiki/Processing)). Use 'PostSetup' if you need the analogue of the function 'Start' ( MonoBehaviour.Start() ).
 
 ```csharp
 public class StarterLevel1 : Starter 
@@ -56,7 +56,7 @@ public class StarterLevel1 : Starter
     }
 
 ```
-When we move from one main scene to another, all the handlers added to the scene are unloaded from the system.
+When we move from one main scene to another, all the handlers ([Proccessing](https://github.com/dimmpixeye/ecs/wiki/Processing)) added to the scene are unloaded from the system.
 
 ## Building Settings
 
