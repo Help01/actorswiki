@@ -60,7 +60,7 @@ When we move from one main scene to another, all the handlers ([proccessings](
 
 ## Building Settings
 
-Remember to specify / check your scenes in Building Settings. The order of the scenes is not important, just make sure that the scene that starts your game is first in the list of scenes.
+Remember to add / tick your scenes in Building Settings if you want the scenes will be included in your build. The order of the scenes is not important, just make sure that the scene that starts your game is first in the list of scenes.
 
 ## Scene Kernel
 
