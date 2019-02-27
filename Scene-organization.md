@@ -66,7 +66,7 @@ Remember to add / tick your scenes in Building Settings if you want the scenes w
 
 It`s particularly worth mentioning 'Scene Kernel'. It is the root scene. From it comes the initialization of the framework, plug-ins, templates. Without this scene, nothing will work and it must always be present both in 'Scenes Depends On' and in 'Scenes To Keep' on the main scenes.
 
-Please note 'Scene Kernel' is not for adding any contents.
+Please note 'Scene Kernel' is only for editing Kernel starter settings.
 
 
 ## From the Cook-Book
