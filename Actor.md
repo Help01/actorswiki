@@ -60,7 +60,7 @@ public class ActorModuleReactor : Actor, IManualDeploy
 Finally, once you are ready to ship your Actor entity use ```ForceDeploy()``` method with your Actor. 
 
 ### ComponentObject ###
-An ```Actor``` adds a ```ComponentObject``` by default. The ComponentObject represents the ```Transform``` of the Actor attached to the ```GameObject```
+An ```Actor``` adds a ```ComponentObject``` by default. The ComponentObject holds the ```Transform``` reference of the Actor attached to the ```GameObject```
 
 ### How Actor Works ###
 
