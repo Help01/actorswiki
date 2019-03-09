@@ -1,6 +1,6 @@
 The Actor is a bridge class that allows communicating between unity game objects and framework. Most of the time you will inherit from Actors when defining new objects.
 
-The Actor class is *NOT* for defining game logic. You use Actors only to add some components to the entity, to have a connection between Framework and Unity out of the box and for initial setup of the object. 
+The Actor class is *NOT* for defining game logic. It's for defining what is your Entity. You use Actors only to add some components to the Entity, to have a connection between Framework and Unity out of the box and for initial setup of the object. 
 
 
 ### How to create ###
@@ -46,3 +46,9 @@ public class ActorModuleReactor : Actor
         }
     }
 ```
+At the next frame your Entity will be added to all processings.
+
+[![Actor in the Inspector](https://i.gyazo.com/2bdd01853f4df82d3ddf6e8f06241b1f.gif)](https://gyazo.com/2bdd01853f4df82d3ddf6e8f06241b1f)
+
+### Manual Deploy ###
+In some situations you might want to hold your Actor and decide when it should be deployed to processings.
