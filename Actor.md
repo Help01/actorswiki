@@ -23,11 +23,12 @@ public class ActorModuleReactor : Actor
 	}
 ```
 
-* Now we are ready  to add some components!
+*  Now we are ready to add some components!
 ```csharp
 public class ActorModuleReactor : Actor
     {
-       // use the FoldoutGroup attribute to decorate components nicely in   groups in the Unity Inspector
+       // use the FoldoutGroup attribute to decorate components nicely 
+       // in groups in the Unity Inspector
        [FoldoutGroup("Setup")]
         public ComponentStateMachine componentStateMachine;
 
@@ -36,9 +37,12 @@ public class ActorModuleReactor : Actor
 
         protected override void Setup()
         {
+             // add your components to the Entity of the Actor
              Add(componentStateMachine);
              Add(componentRecycle);
-             Add(componentDescription);
+             
+             // add a component by its type. 
+             Add<ComponentDescription>;
         }
     }
 ```
