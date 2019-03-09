@@ -51,4 +51,12 @@ At the next frame your Entity will be added to all processings.
 [![Actor in the Inspector](https://i.gyazo.com/2bdd01853f4df82d3ddf6e8f06241b1f.gif)](https://gyazo.com/2bdd01853f4df82d3ddf6e8f06241b1f)
 
 ### Manual Deploy ###
-In some situations you might want to hold your Actor and decide when it should be deployed to processings.
+In some situations, you might want to hold your Actor and decide when deploying your Entity to processing.
+In this case, inherit your Actor from ```IManualDeploy``` interface.
+
+```csharp
+public class ActorModuleReactor : Actor, IManualDeploy
+```
+
+Finally, once you are ready to ship your Actor entity use ```ForceDeploy()``` method with your Actor. 
+
