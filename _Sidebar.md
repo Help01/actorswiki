@@ -7,6 +7,7 @@
 ### Manual
 
 - [[Components|Components]]
+- [[Actor|Actor]]
 - [[Processing|Processing]]
 
 ### RU
