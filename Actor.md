@@ -11,7 +11,7 @@ The Actor class is *NOT* for defining game logic. You use Actors only to add som
 public class ActorModuleReactor : Actor {
 ```
 
-*  Add the ```Setup``` method. The ```Setup``` method is an essential part that allows safely initialize your actor on Awake and sync it in the right way with the framework. Please, use only ```Setup``` method instead of ```Awake``` and ```Start```.
+* Add the ```Setup``` method. The ```Setup``` method is an essential part that allows safely initialize your actor on Awake and sync it in the right way with the framework. Please, use only ```Setup``` method instead of ```Awake``` and ```Start```.
 
 ```csharp
 public class ActorModuleReactor : Actor
@@ -21,4 +21,24 @@ public class ActorModuleReactor : Actor
 			 
 		}
 	}
+```
+
+* Now we are ready  to add some components!
+```csharp
+public class ActorModuleReactor : Actor
+    {
+       // use the FoldoutGroup attribute to decorate components nicely in   groups in the Unity Inspector
+       [FoldoutGroup("Setup")]
+        public ComponentStateMachine componentStateMachine;
+
+        [FoldoutGroup("Setup")]
+        public ComponentRecycle componentRecycle;
+
+        protected override void Setup()
+        {
+             Add(componentStateMachine);
+             Add(componentRecycle);
+             Add(componentDescription);
+        }
+    }
 ```
