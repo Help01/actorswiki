@@ -57,6 +57,16 @@ In this case, inherit your Actor from ```IManualDeploy``` interface.
 ```csharp
 public class ActorModuleReactor : Actor, IManualDeploy
 ```
-
 Finally, once you are ready to ship your Actor entity use ```ForceDeploy()``` method with your Actor. 
+
+### How Actor Works ###
+
+
+ * Actor checks if the scene initialized from the Starter class. If not it holds Enable and Setup methods until initialization; this helps to be sure that Starter class initialize all Processing scripts first.
+* Actor creates a new entity and add ```ComponentObject``` to it.
+* Setup method is triggered. All custom stuff and components developer wish to add goes to the Setup method.
+* When an Actor enabled, Deploy method is triggered. The entity goes to all entity groups that are interested in this particular entity.
+* When an Actor is disabled it notifies all entity groups that holds this particular entity that it's out.
+* When an Actor destroyed, it notifies all entity groups that holds this particular entity that it's out and free the entity ID.
+
 
