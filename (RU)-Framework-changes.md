@@ -200,7 +200,7 @@ group_brains.onAdd += (in ent entity) =>
 	{
 
 		[RuntimeInitializeOnLoadMethod]
-		static void ComponentViewGoblinInit()
+		static void ComponentGoblinInit()
 		{
 			Storage<ComponentGoblin>.Instance.Creator = () => { return new ComponentGoblin(); };
 		}
