@@ -236,9 +236,9 @@ entity.ComponentGoblin();
 
 var entity = ent.CreateFrom("Obj Player");
 entity.Add<ComponentMotion>();
-entity.Add<ComponentWeapon();
-entity.Add<ComponentJump();
-entity.Add<ComponentHealth();
+entity.Add<ComponentWeapon>();
+entity.Add<ComponentJump>();
+entity.Add<ComponentHealth>();
 entity.Add<ComponentStealth>();
 entity.Add<ComponentMagicAbility>();
 ```
