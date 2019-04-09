@@ -100,6 +100,31 @@ var cPlayer = entity.Add<ComponentPlayer>();
 cPlayer.name = "Sonic";
 ```
 
+### Add, AddLater
+Раньше компоненты добавлялись только через метод Add. Что такое AddLater?
+AddLater полезен при создании акторов, blueprints или других способов композиции сущности. Он добавляет настроенный компонент в хранилище, но не забрасывает его в системы. Таким образом можно полностью настроить все компоненты сущности и решить какие из компонентов заработают сразу, а какие будут добавлены позже.
+
+
+```csharp
+var entity = ent.CreateFrom("obj player");
+// Component Player добавится сразу.
+var cPlayer = entity.Add<ComponentPlayer>();
+cPlayer.name = "Sonic";
+var cHealth = entity.Add<ComponentHealth>();
+cHealth.Hp = 10;
+// Component Death будет создан, размещен, но не добавлен в системы.
+var cDeath = entity.AddLater<ComponentDeath>();
+cDeath.animationType = "anim_player_death";
+
+
+// где-то далеко дальше в коде c той самой созданной сущностью.
+ 
+if (entityPlayer.ComponentHealth().Hp==0)
+entityPlayer.Add<ComponentDeath>(); // добавит в системы раннее созданный Component Death с настройкой "anim_player_death"
+
+```
+
+
 ### EntityComposer
 Зачем нужен entitycomposer. Выше было сказано, что изменения в компоненты будут внесены только на следующий кадр. Допустим мы создаем 100 сущностей за раз и у каждой по 5 компонентов. Это значит что мы сделаем 500 операций добавления. Я не говорю, что это страшно ( на синтетических тестах создвал десятки тысяч объектов за раз ), однако кол-во операций можно сократить. В среднем это на 30% быстрее ленивой работы с сущностями и такой подход стоит использовать если вы за раз хотите добавить  сущности больше 1-2 компонентов + тэги, да еще и нужно инициализировать скопом сразу несколько таких сущностей.
 
@@ -194,5 +219,33 @@ group_brains.onAdd += (in ent entity) =>
 
 ```csharp
 entity.ComponentGoblin();
+```
+
+###Actor и Monocached
+Практически не претерпели изменений оба класса, однако Актор больше не наследуется от Monocached. Если нужно получить ссылку на сущность с объекта unity. Ищите интерфейс IEntity. И актор и монокешд обладают этим интерфейсом.
+
+Так же Actor держит ссылку на ассет blueprint. О работе с ним распишу отдельно. Классы наследуемые от Actor так же можно использовать в качестве "View" классов ( прослойке для работы на стороне юнити с ее компонентами ) 
+
+
+###Blueprint
+Распишу в ближайшем будущем. Blueprint - это ассет с базовыми настройками компонентов сущности. Он во многом похож на актора, но если актор это компонент висящий на префабе, то blueprint это SO ассет создающий сущность с компонентами. Blueprints очень легко визуально настраиваются если есть инспектор ODIN.
+
+Например так бы выглядело в коде создание сущности героя. 
+
+```csharp
+
+var entity = ent.CreateFrom("Obj Player");
+entity.Add<ComponentMotion>();
+entity.Add<ComponentWeapon();
+entity.Add<ComponentJump();
+entity.Add<ComponentHealth();
+entity.Add<ComponentStealth>();
+entity.Add<ComponentMagicAbility>();
+```
+
+Если бы у нас был блюпринт героя то это выглядело бы так:
+
+```csharp
+var entity = ent.CreateFrom(Blueprints.Player);
 ```
 
