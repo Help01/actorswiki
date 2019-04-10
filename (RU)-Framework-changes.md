@@ -65,14 +65,14 @@ ent entity = ent.Create();
 
 ```csharp
 // создаем сущность и соединяем ее с префабом из Resources
-var entity = ent.CreateFrom("obj player");
+var entity = ent.CreateFor("obj player");
 ```
 
 ```csharp
 // создаем сущность и соединяем ее с префабом из Resources
 var prefab = Resources.Load("Prefabs/obj player") as GameObject;
 // тоже самое только передаем префаб
-var entity = ent.CreateFrom(prefab);
+var entity = ent.CreateFor(prefab);
 ```
 
 #### AddMonoReference
@@ -80,7 +80,7 @@ var entity = ent.CreateFrom(prefab);
 
 **ЕСЛИ** таким образом вы создаете объект на котором присутствует Actor скрипт, то использовать AddMonoReference не нужно. 
 ```csharp
-var entity = ent.CreateFrom(prefab);
+var entity = ent.CreateFor(prefab);
 entity.AddMonoReference();
 ```
 
@@ -95,7 +95,7 @@ var tr = entity.transform;
 Раньше обязательно требовалось обращение к EntityComposer. Теперь все стало проще. За добавление, удаление компонентов, уничтожение сущностей и изменение тэгов отвечают отложенные на следующий кадр операции.
 
 ```csharp
-var entity = ent.CreateFrom("obj player");
+var entity = ent.CreateFor("obj player");
 var cPlayer = entity.Add<ComponentPlayer>();
 cPlayer.name = "Sonic";
 ```
@@ -106,7 +106,7 @@ AddLater полезен при создании акторов, blueprints ил�
 
 
 ```csharp
-var entity = ent.CreateFrom("obj player");
+var entity = ent.CreateFor("obj player");
 // Component Player добавится сразу.
 var cPlayer = entity.Add<ComponentPlayer>();
 cPlayer.name = "Sonic";
@@ -234,7 +234,7 @@ entity.ComponentGoblin();
 
 ```csharp
 
-var entity = ent.CreateFrom("Obj Player");
+var entity = ent.CreateFor("Obj Player");
 entity.Add<ComponentMotion>();
 entity.Add<ComponentWeapon>();
 entity.Add<ComponentJump>();
@@ -246,6 +246,6 @@ entity.Add<ComponentMagicAbility>();
 Если бы у нас был блюпринт героя то это выглядело бы так:
 
 ```csharp
-var entity = ent.CreateFrom(Blueprints.Player);
+var entity = ent.CreateFor(Blueprints.Player);
 ```
 
