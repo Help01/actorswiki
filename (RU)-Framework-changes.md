@@ -87,7 +87,7 @@ entity.AddMonoReference();
 #### Transform
 Если вы создавали сущность с привязкой объекта юнити то можно легко получить трансформ этого объекта.
 ```csharp
-var entity = ent.CreateFrom("obj player");
+var entity = ent.CreateFor("obj player");
 var tr = entity.transform;
 ```
 
