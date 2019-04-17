@@ -24,6 +24,7 @@
 - [[Основы|(RU) Basics]]
 - [[Компоненты|(RU) Components]]
 - [[Обработчики|(RU) Processings]]
+- [[Сущности|(RU) Entities]]
 - [[Акторы|(RU) Actors]]
 - [[Entity Composer|(RU) Entity Composer]] 
 - [[Тэги|(RU) Tags]] 
