@@ -89,7 +89,7 @@ public class ActorUnit : Actor
      // создаст/добавит компонент по типу
      Add<ComponentMotion>();
     
-     // добавим тэг
+     // добавит тэг
      Add(Tag.Alpaca);
   }
  
