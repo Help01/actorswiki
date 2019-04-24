@@ -6,7 +6,7 @@
 > Акторы самостоятельно создают сущность.
 
 #### Вариант 1
-Вернет нового актора и назначит ей новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
+Вернет нового актора и назначит ему новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
 ```csharp
 public void Setup()
 {
@@ -14,7 +14,7 @@ public void Setup()
 }
 ```
 #### Вариант 2
-Вернет новую сущность и назначит ей новый игровой объект (gameobject). Объект будет получен из предоставленного разработчиком префаба (prefab).
+Вернет нового актора и назначит ему новый игровой объект (gameobject). Объект будет получен из предоставленного разработчиком префаба (prefab).
 ```csharp
 public GameObject prefabFluffyUnicorn;
 public void Setup()
@@ -95,3 +95,23 @@ public class ActorUnit : Actor
  
 }
 ```
+
+#### Вариант 2 - модели
+
+##### Cпособ 1
+Вернет нового актора и назначит ему новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
+Настройки для актора будут взяты из ```Models.Bunny```
+```csharp
+Actor.Create("Obj Unit", Models.Bunny);
+Actor.Create("Obj Sprite", Models.Bunny);
+```
+
+##### Cпособ 2
+Вернет актора и назначит ему игровой объект найденный на сцене.  
+Настройки для актора будут взяты из ```Models.Bunny```
+```csharp
+var obj = GameObject.Find("Hollow Soul");
+Actor.CreateFor(obj, Models.Bunny);
+```
+
+[Настройка моделей](https://github.com/dimmpixeye/ecs/wiki/(RU)-Models)
