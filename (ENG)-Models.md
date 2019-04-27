@@ -35,9 +35,9 @@ public static void Bunny(EntityComposer composer)
 }
 ```
 Logically, the model code block can be divided into some parts:
-- Components that do not need to be configured are added first.
-- Next is a list of components requiring settings within the model.
-- After you configure the declared components.
+- Components that do not need to be set up are added first.
+- Next is a list of components requiring to be set up within the model.
+- After you set up the declared components.
 - Finally, the tags you need are added.
 
 #### What is Entity Composer for?
