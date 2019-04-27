@@ -4,10 +4,10 @@
 
 ***
 
-### What is a model?
-A model is one of the ways to configure an entity or actor from code. According to its purpose, it resembles blueprints.
+### What is "Model"?
+The Model is one of the ways to configure an entity or an actor using code. Its purpose is similar to "Blueprints".
 
->To the note: in the framework there is no strict requirement for the name of this design pattern.
+>Note: in the framework there is no strict requirement for the name of this design pattern.
 
 ### How to create it?
 
@@ -19,7 +19,7 @@ public static class Models
 
 }
 ```
-* Добавьте статик метод с названием описывающим вашу модель сущности.
+* Add a static method with the name which characterizes your model of entity.
 ```csharp
 public static void Bunny(EntityComposer composer)
 {
@@ -34,13 +34,14 @@ public static void Bunny(EntityComposer composer)
   composer.Add(Tag.CanPoo);
 }
 ```
-Логически блок кода модели можно разделить на несколько частей:
-- Первыми добавляются компоненты чья настройка не нужна.
-- Далее идет список компонентов требующих настроек в рамках модели.
-- После идет настройка объявленных компонентов
-- В самом конце добавляются необходимые тэги.
+Logically, the model code block can be divided into some parts:
+- Components that do not need to be configured are added first.
+- Next is a list of components requiring settings within the model.
+- After you configure the declared components.
+- Finally, the tags you need are added.
 
-#### Зачем EntityComposer
-Методы добавления компонентов являются отложенными действиями. Это значит, что добавление в системы произойдет только на следующий кадр. EntityComposer добавляет все компоненты через одну операцию. 
+#### What is Entity Composer for?
+
+The methods of adding components are deferred actions. It means, that they are added to the system in the next frame.  Entity Composer adds all components not in the current operation but in the next one.
 
 to be continued
