@@ -11,7 +11,7 @@ A model is one of the ways to configure an entity or actor from code. According 
 
 ### How to create it?
 
-*Create static class Models
+* Create static class Models
 
 ```csharp
 public static class Models
