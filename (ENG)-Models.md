@@ -9,9 +9,9 @@ A model is one of the ways to configure an entity or actor from code. According 
 
 >To the note: in the framework there is no strict requirement for the name of this design pattern.
 
-### Как создавать ?
+### How to create it?
 
-* Создайте static class Models
+*Create static class Models
 
 ```csharp
 public static class Models
