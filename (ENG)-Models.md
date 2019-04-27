@@ -1,13 +1,13 @@
-### Необходимые материалы
-- [Сущности](https://github.com/dimmpixeye/ecs/wiki/%28RU%29-Entities)
-- [Акторы](https://github.com/dimmpixeye/ecs/wiki/%28RU%29-Actors)
+### Required information
+- [Entities](https://github.com/dimmpixeye/ecs/wiki/%28RU%29-Entities)
+- [Actors](https://github.com/dimmpixeye/ecs/wiki/%28RU%29-Actors)
 
 ***
 
-### Что такое модель ?
+### What is a model?
+A model is one of the ways to configure an entity or actor from code. According to its purpose, it resembles blueprints.
 
-Модель - это один из способов настройки сущности или актора из кода. По своему назначению напоминает схемы (blueprints).
-> На заметку: в фреймворке нет жесткого требования к названию этого шаблона проектирования.
+>To the note: in the framework there is no strict requirement for the name of this design pattern.
 
 ### Как создавать ?
 
