@@ -44,4 +44,33 @@ Logically, the model code block can be divided into some parts:
 
 The methods of adding components are deferred actions. It means, that they are added to the system in the next frame.  Entity Composer adds all components not in the current operation but in the next one.
 
-to be continued
+### How to use?
+
+#### Method 1
+Returns a new actor and assigns it a new game object (gameobject). The object will be obtained from the Resources folder by name. The settings for the actor will be taken from Models.Bunny
+```csharp
+Actor.Create("Obj Unit", Models.Bunny);
+Actor.Create("Obj Sprite", Models.Bunny);
+```
+
+#### Cпособ 2
+Вернет актора и назначит ему игровой объект найденный на сцене.  
+Настройки для актора будут взяты из ```Models.Bunny```
+```csharp
+var obj = GameObject.Find("Hollow Soul");
+Actor.CreateFor(obj, Models.Bunny);
+```
+
+#### Способ 3
+Вернет cущность и и назначит ей новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
+Настройки для актора будут взяты из ```Models.Bunny```
+```csharp
+Entity.Create("Obj Sprite", Models.Bunny);
+```
+
+### Зачем использовать ?
+* Модели убирают настройку сущности из рабочей области проекта что ведет к повышению читаемости кода.
+* Модели универсальны: одну и ту же модель можно применить на разных префабах. 
+* Модели добавляют все компоненты одной операцией. _( справедливо и для акторов )_
+* Модели могут быть абстрактны и не привязаны к игровому объекту.
+* Модели не требуют наследований от класса Actor и размещения унаследованных компонентов на префабах.
