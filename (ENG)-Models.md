@@ -53,24 +53,24 @@ Actor.Create("Obj Unit", Models.Bunny);
 Actor.Create("Obj Sprite", Models.Bunny);
 ```
 
-#### Method 2
-Return the actor and assign him the game object found on the scene.
+#### Method 2...
+...returns the actor and assigns him the game object found on the scene.
 The settings for the actor will be taken from ```Models.Bunny```
 ```csharp
 var obj = GameObject.Find("Hollow Soul");
 Actor.CreateFor(obj, Models.Bunny);
 ```
 
-#### Способ 3
-Вернет cущность и и назначит ей новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
-Настройки для актора будут взяты из ```Models.Bunny```
+#### Method 3...
+...returns the essence and assigns it a new game object (gameobject). The object will be obtained from the Resources folder by name.
+The settings for the actor will be taken from `` `Models.Bunny```
 ```csharp
 Entity.Create("Obj Sprite", Models.Bunny);
 ```
 
-### Зачем использовать ?
-* Модели убирают настройку сущности из рабочей области проекта что ведет к повышению читаемости кода.
-* Модели универсальны: одну и ту же модель можно применить на разных префабах. 
-* Модели добавляют все компоненты одной операцией. _( справедливо и для акторов )_
-* Модели могут быть абстрактны и не привязаны к игровому объекту.
-* Модели не требуют наследований от класса Actor и размещения унаследованных компонентов на префабах.
+### Why use?
+* Models remove the entity setting from the project workspace, which leads to increased readability of the code.
+* Models are universal: the same model can be applied on different prefabs.
+* Models add all components in a single operation. _ (true for actors) _
+* Models can be abstract and not attached to the game object.
+* Models do not require inheritance from the class Actor and placing legacy components in prefabs.
