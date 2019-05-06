@@ -71,6 +71,6 @@ Entity.Create("Obj Sprite", Models.Bunny);
 ### What are the reasons to use models?
 * Models remove the entities setting from the project workspace, which leads to increased readability of your  code.
 * Models are universal: the same model can be applied to different prefabs.
-* Models add all components in a single operation. _ (true for actors) _
+* Models add all components in a single operation. (the same for actors)
 * Models can be abstract and not attached to the game object.
 * Models do not require inheritance from the class Actor and placing legacy components in prefabs.
