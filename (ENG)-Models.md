@@ -63,7 +63,7 @@ Actor.CreateFor(obj, Models.Bunny);
 
 #### Method 3...
 ...returns the essence and assigns it a new game object (gameobject). The object will be obtained from the Resources folder by name.
-The settings for the actor will be taken from `` `Models.Bunny```
+The settings for the actor will be taken from ```Models.Bunny```
 ```csharp
 Entity.Create("Obj Sprite", Models.Bunny);
 ```
