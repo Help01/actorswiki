@@ -68,8 +68,8 @@ The settings for the actor will be taken from ```Models.Bunny```
 Entity.Create("Obj Sprite", Models.Bunny);
 ```
 
-### Why use?
-* Models remove the entity setting from the project workspace, which leads to increased readability of the code.
+### What are the reasons to use models?
+* Models remove the process of entities setting from the project workspace, which leads to increased readability of the code.
 * Models are universal: the same model can be applied on different prefabs.
 * Models add all components in a single operation. _ (true for actors) _
 * Models can be abstract and not attached to the game object.
