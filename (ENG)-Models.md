@@ -73,4 +73,4 @@ Entity.Create("Obj Sprite", Models.Bunny);
 * Models are universal: the same model can be applied to different prefabs.
 * Models add all components in a single operation. _(as actors do)_
 * Models can be abstract and not attached to the game object.
-* Models do not require inheritance from the class Actor and placing legacy components in prefabs.
+* Models do not require inheritance from the class ```Actor``` and placing legacy components in prefabs.
