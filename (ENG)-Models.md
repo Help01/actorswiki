@@ -47,7 +47,7 @@ The methods of adding components are deferred actions. It means, that they are a
 ### How to use?
 
 #### Method 1...
-...returns a new actor and assigns it a new game object (gameobject). The object will be obtained from the Resources folder by name. The settings for the actor will be taken from ```Models.Bunny```
+...returns a new actor and assigns it a new game object (GameObject). The object will be obtained from the Resources folder by name. The settings for the actor will be taken from ```Models.Bunny```
 ```csharp
 Actor.Create("Obj Unit", Models.Bunny);
 Actor.Create("Obj Sprite", Models.Bunny);
