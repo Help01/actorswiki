@@ -16,6 +16,7 @@
 - [[Установка фреймворка|(RU) Framework setup]]
 - [[Организация проекта|(RU) Project organization]]
 - [[Организация сцен|(RU) Scene organization]]
+- [[Обозреватели|(RU) Observers]]
 - [[Фабрики|(RU) Factory]]
 - [[Шаблоны|(RU) Templates]]
 - [[Книга рецептов Unity3d|https://github.com/dimmpixeye/Unity3d-Cook-Book]]
