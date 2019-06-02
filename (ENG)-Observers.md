@@ -6,7 +6,7 @@ Basically it is convenient for working with the interfaces that often need to ob
 
 ### How to subscribe?
 #### The 1st way.
-Using the ```this.Value Change ()``` method to create and return an abstract entity with an observer.
+Using the method ```this.Value Change ()``` to create and return an abstract entity with an observer.
 ```csharp
 	sealed class ProcessorTesting: Processor, ITick
 	{
@@ -54,11 +54,11 @@ It is not necessary to create a new entity, you can connect the observer to an e
 
 ```
 > Note,  
-You can connect more than one observer to an entity. To do this, it is enough to continue to transfer to the -```this.Value Change ()``` method the same entity.
+You can connect more than one observer to an entity. To do this, it is enough to continue to transfer the same entity to the method -```this.Value Change ()```.
 
 ### How to unsubscribe?
 Because of observers depend on entities, they will automatically be destroyed along with the entities.
-The method ```this.ValueChange()```returns a new entity with an observer and cashed it, you can call it with the help of the method ```Release```
+The method ```this.ValueChange()```returns a new entity with an observer and cashed it, you can call it using the method ```Release```
 
 ```csharp
         public ent observer;
@@ -70,7 +70,7 @@ The method ```this.ValueChange()```returns a new entity with an observer and cas
 			}
 		}
 ```
-If you just need to clear the stack of observers of the entity without destroying it, you can use
+If you just need to clear the stack of the observers of the entity without destroying it, you can use
 ```observer.ReleaseObservers();```
 ```csharp
         public ent observer;
