@@ -1,12 +1,12 @@
 #  Reactive components
-В фреймворке можно _подписаться_ на изменения переменной и произвести действие в момент изменения.
+In the framework, you can _subscribe_ to change a variable and perform an action at the time of the change.
 
-### Когда это нужно
-В основном это удобно для работы с интерфейсами которым часто требуется отслеживать параметры. Например здоровье героя.
+### When you need it?
+Basically it is convenient for working with the interfaces that often need to observe some parameters. For example, the health of the main character.
 
-### Как подписаться
-#### Вариант 1
-Используя метод ```this.ValueChange()``` создать и вернуть абстрактную сущность с обозревателем.
+### How to subscribe?
+#### The 1st way.
+Using the ```this.Value Change ()``` method to create and return an abstract entity with an observer.
 ```csharp
 	sealed class ProcessorTesting: Processor, ITick
 	{
@@ -16,11 +16,11 @@
 		
 		public ProcessorTesting()
 		{
-                        // где source = объект из которого берется переменная
+                        //where "source" = the object from which the variable is taken
 			observer = this.ValueChange(source => hp, HandleChangeHP);
 		}
 
-                // метод который должен сработать с изменением. Возвращает изменившиеся значение.
+                // The method that will work when the change occurred. Returns the changed value.
 		void HandleChangeHP(float val) 
                 {
                          Debug.Log($"HP IS {val}"); 
@@ -28,8 +28,8 @@
           }
 
 ```
-#### Вариант 2
-Необязательно создавтаь новую сущность, можно повесить обозревателя на уже существующую. Иногда это удобно когда мы не хотим заморачиваться с уничтожением обозревателя, ведь он будет уничтожен вместе с сущностью которой мы его добавили. 
+#### The 2nd way.
+It is not necessary to create a new entity, you can connect the observer to an existing one. Sometimes it is convenient when we don’t want to bother with the destruction of the observer, because it will be destroyed along with the entity of which we added it. 
 ```csharp
 	sealed class ProcessorTesting: Processor, ITick
 	{
@@ -39,13 +39,13 @@
 		
 		public ProcessorTesting()
 		{
-                         // допустим это игрок
+                         // imagine that this is a player
                         observer = Entity.Create();
-                        // где source = объект из которого берется переменная
+                        // where "source" = the object from which the variable is taken
 			this.ValueChange(source => hp, HandleChangeHP, observer);
 		}
 
-                // метод который должен сработать с изменением. Возвращает изменившиеся значение.
+                // The method that will work when the change occurred. Returns the changed value.
 		void HandleChangeHP(float val) 
                 {
                          Debug.Log($"HP IS {val}"); 
@@ -53,11 +53,11 @@
           }
 
 ```
-> На заметку:  
-Можно вешать несколько обозревателей на одну сущность. Для этого достаточно продолжать передавать в метод -```this.ValueChange()``` ту же сущность.
+> Note,  
+You can connect more than one observer to an entity. To do this, it is enough to continue to transfer to the -```this.Value Change ()``` method the same entity.
 
-### Как отписаться
-Так как обозреватели живут на сущностях то они автоматически будут уничтожены вместе с сущностью. 
+### How to unsubscribe?
+Because of observers depend on entities, they will automatically be destroyed along with the entities.
 Метод ```this.ValueChange()``` возвращает новую сущность с обозревателем и закешировав ее можно потом вызвать ```Release```
 
 ```csharp
