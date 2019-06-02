@@ -3,7 +3,7 @@
 - [[Framework setup|Setup]]
 - [[Project organization|Project organization]]
 - [[Scene organization|Scene organization]]
-- [[Reactive components|Reactive components]]
+- [[Reactive components|(ENG) Observers]]
 - [[Factory|Factory]]
 ### Manual
 
