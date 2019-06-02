@@ -58,7 +58,7 @@ You can connect more than one observer to an entity. To do this, it is enough to
 
 ### How to unsubscribe?
 Because of observers depend on entities, they will automatically be destroyed along with the entities.
-Метод ```this.ValueChange()``` возвращает новую сущность с обозревателем и закешировав ее можно потом вызвать ```Release```
+The method ```this.ValueChange()```returns a new entity with an observer and cashed it, you can call it with the help of the method ```Release```
 
 ```csharp
         public ent observer;
@@ -70,7 +70,7 @@ Because of observers depend on entities, they will automatically be destroyed al
 			}
 		}
 ```
-Если нужно просто очистить стэк обозрения у сущности не уничтожая ее то можно воспользоваться 
+If you just need to clear the stack of observers of the entity without destroying it, you can use
 ```observer.ReleaseObservers();```
 ```csharp
         public ent observer;
