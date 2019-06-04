@@ -1,5 +1,5 @@
 #  Reactive components
-In the framework, you can _subscribe_ to the change of a variable and perform an action at the time of its change.
+In the framework, you can _subscribe_ to the change of a variable value and assign an action that will occur during its change.
 
 ### When you need it?
 Basically it is convenient for working with the interfaces that often need to observe some parameters. For example, the health of the main character.
