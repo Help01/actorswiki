@@ -84,17 +84,14 @@ public class ActorUnit : Actor
   protected override void Setup()
   {
      // добавит компонент
-     Add(componetCollider);
-  
-     // добавит компонент, но не инициализирует его в системах. Компонент будет оставаться невидимым пока его не добавят через Add
-     // Используется когда важно полностью настроить сущность, но работа некоторых компонентов ненужна на старте. 
-     AddLater(componentObject);
+     Set(componetCollider);
+     Set(componentObject);
     
      // создаст/добавит компонент по типу
-     Add<ComponentMotion>();
+     Set<ComponentMotion>();
     
      // добавит тэг
-     Add(Tag.Alpaca);
+     Set(Tag.Alpaca);
   }
  
 }
@@ -104,18 +101,18 @@ public class ActorUnit : Actor
 
 ##### Cпособ 1
 Вернет нового актора и назначит ему новый игровой объект (gameobject). Объект будет получен из папки Resources по имени.
-Настройки для актора будут взяты из ```Models.Bunny```
+Настройки для актора будут взяты из ```Model.Bunny```
 ```csharp
-Actor.Create("Obj Unit", Models.Bunny);
-Actor.Create("Obj Sprite", Models.Bunny);
+Actor.Create("Obj Unit", Model.Bunny);
+Actor.Create("Obj Sprite", Model.Bunny);
 ```
 
 ##### Cпособ 2
 Вернет актора и назначит ему игровой объект найденный на сцене.  
-Настройки для актора будут взяты из ```Models.Bunny```
+Настройки для актора будут взяты из ```Model.Bunny```
 ```csharp
 var obj = GameObject.Find("Hollow Soul");
-Actor.CreateFor(obj, Models.Bunny);
+Actor.CreateFor(obj, Model.Bunny);
 ```
 
 [Настройка моделей](https://github.com/dimmpixeye/ecs/wiki/(RU)-Models)
