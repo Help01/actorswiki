@@ -119,7 +119,7 @@ var tail = e.transform.Find("Tail").GetComponent<SpriteRenderer>();
 Более быстрой и эффективной альтернативой является поиско по индексу дочернего объекта. 
 ```csharp
 ent e = Entity.Create("Obj Bunny");
-var tail = e.Get<SpriteRenderer>(2); // где два является индексом дочернего объекта в кролике. Допустим, это хвостик.
+var tail = e.GetMono<SpriteRenderer>(2); // где два является индексом дочернего объекта в кролике. Допустим, это хвостик.
 ```
 
 ### Проверка и сравнение сущностей
