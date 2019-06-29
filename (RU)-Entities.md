@@ -109,7 +109,7 @@ var tr = e.transform;
 Если нужно получить конкретный компонент то можно воспользоваться вспомогательными методами ```get<T>``` - он возьмет компонент из корня или дочернего объекта.
 ```csharp
 ent e = Entity.Create("Obj Bunny");
-var spr = e.Get<SpriteRenderer>();
+var spr = e.GetMono<SpriteRenderer>();
 ```
 Поиск по пути производите стандартно штатными средствами Unity через transform.
 ```csharp
