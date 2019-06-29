@@ -188,8 +188,8 @@ public class ProcessingPlayers : ProcessingBase
         [FoldoutGroup("Setup")] public ComponentLight componentLight;
          protected override void Setup()
         {
-            Add(componentLight);
-            Add(Tag.GroupAlly);
+            Set(Tag.GroupAlly);
+            Set(componentLight);    
         }
      }
 ```
