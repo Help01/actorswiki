@@ -30,5 +30,4 @@
 - [[Сущности|(RU) Entities]]
 - [[Акторы|(RU) Actors]]
 - [[Модели|(RU) Models]]
-- [[Entity Composer|(RU) Entity Composer]] 
 - [[Тэги|(RU) Tags]] 
