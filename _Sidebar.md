@@ -31,3 +31,7 @@
 - [[Акторы|(RU) Actors]]
 - [[Модели|(RU) Models]]
 - [[Тэги|(RU) Tags]] 
+
+### Классы
+
+- [[Actor| (RU) Class Actor]]
