@@ -32,6 +32,6 @@
 - [[Модели|(RU) Models]]
 - [[Тэги|(RU) Tags]] 
 
-### Классы
+### API
 
-- [[Actor| (RU) Class Actor]]
+- [[Actor|(RU) Actor]]
