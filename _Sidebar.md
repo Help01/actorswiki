@@ -35,3 +35,4 @@
 ### API
 
 - [[Actor|(RU) Actor]]
+- [[Entity| (RU) Entity]]
