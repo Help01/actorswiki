@@ -32,7 +32,7 @@
 - [[Модели|(RU) Models]]
 - [[Тэги|(RU) Tags]] 
 
-### API
+### (RU) API
 
 - [[Actor|(RU) Actor]]
 - [[Entity| (RU) Entity]]
