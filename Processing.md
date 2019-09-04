@@ -37,7 +37,7 @@ public class StarterLevel1: Starter
 - Use ```ITickLate``` interface to add Late Update to your class.
 
 ```csharp
-public class ProcessingPlayer : ProcessingBase, ITick
+public class ProcessingPlayer : Processor, ITick
 ```
 ## Signals
 Signals allow you to communicate between decoupled parts of the game in Unity3d. You can learn more about signals by following this [link](https://github.com/dimmpixeye/Unity3d-Signals).
