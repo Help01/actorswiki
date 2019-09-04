@@ -2,10 +2,10 @@ In the framework, all ```System```, ```Manager```, ```Controller``` classes are 
  
 ## How to create
 
-Processings are inherited from ```ProcessingBase```
+Processings are inherited from ```Processor```
 
 ```csharp
- public class ProcessingDamageble: ProcessingBase
+ public class ProcessingDamageble: Processor
  {
 
  }
@@ -45,7 +45,7 @@ Signals allow you to communicate between decoupled parts of the game in Unity3d.
 - Use ```IRecieve<Type>``` where Type is a struct.
 
 ```csharp
-public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
+public class ProcessingDamageble : Processor, IReceive<SignalDamage>, ITick
 {
 	public void HandleSignal(ref SignalDamage arg){}
 }
