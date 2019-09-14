@@ -24,7 +24,7 @@ ArrayEntity - структура, предназначенная для испо
 
 ## Методы
 | Тип        | Метод                 | Описание
-| ---------- | --------------------- | -
+| ------------ | --------------------- | -
 | ref ent    | this[int index]       | Возвращает элемент с индексом index
 | void       | Add(in ent entity)    | Добавляет в конец массива entity. При необходимости, массив расширится на 1 элемент
 | void       | Remove(in ent entity) | Удаляет entity из массива если этот entity существует в массиве
@@ -34,7 +34,7 @@ ArrayEntity - структура, предназначенная для испо
 ```csharp
 public void Example(ArrayEntity array)
 {
-  for(int i = 0; i < array.length; i++)
+  for (int i = 0; i < array.length; i++)
   {
      ref var entity = array[i];
      ...
