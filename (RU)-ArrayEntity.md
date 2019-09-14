@@ -28,7 +28,7 @@ ArrayEntity - структура, предназначенная для испо
 | ref ent    | this[int index]       | Возвращает элемент с индексом index
 | void       | Add(in ent entity)    | Добавляет в конец массива entity. При необходимости, массив расширится на 1 элемент
 | void       | Remove(in ent entity) | Удаляет entity из массива если этот entity существует в массиве
-| bool       | Removed(in ent entity)| Делает тоже самое, что и Remove, но еще вернет результат: true - если элемент удален
+| bool       | Removed(in ent entity)| Делает тоже самое, что и Remove, но еще вернет результат: true - если элемент удален, false - если entity отсутствовал в массиве
 
 ## Примеры
 ```csharp
