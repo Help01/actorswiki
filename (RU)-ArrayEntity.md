@@ -1,7 +1,7 @@
 # [Serializable] struct ArrayEntity
 > Namespace: Pixeye.Framework.ArrayEntity <br>
 
-> Версия фреймворка: [2019.09.07] (d1114ffdcf6375105d01f295f419c172e2fb9098) <br>
+> Версия фреймворка: [2019.09.07] <br>
 > Последнее обновление файла: [2019.09.07] <br>
 > Последнее обновление статьи: [2019.09.14]
 
