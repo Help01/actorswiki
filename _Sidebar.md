@@ -39,3 +39,4 @@
 - [[Entity| (RU) Entity]]
 - [[Toolbox| (RU) Toolbox]]
 - [[ArrayEntity| (RU) ArrayEntity]]
+- [[HelperFramework| (RU) HelperFramework]]
