@@ -1,0 +1,32 @@
+= Страница в разработке!
+= static partial class HelperFramework
+
+> Namespace: Pixeye.Framework.HelperFramework
+
+> Версия фреймворка: https://github.com/dimmpixeye/actors/tree/2019.9.15[2019.09.15] +
+> Последнее обновление статьи: [2019.09.16]
+
+## Описание
+HelperFramework - вспомогательный класс фреймворка. В нем содержится множество методов расширений, которые облегчат вашу жизнь! :D Они могут быть разбросаны по разным файлам, поэтому, возможно, Вы встретите их и в других статьях.
+
+> Методы расширения первым параметром содержит this. Для более подробной информации о методах расширения, обратитесь к справочнику языка C#.
+
+---
+
+> Файл HelperFramework.cs +
+> Последнее изменение файла: [2019.02.24]
+
+## Math
+
+.Math
+|===
+|Name of Column 1 |Name of Column 2 |Name of Column 3 
+
+|Cell in column 1, row 1
+|Cell in column 2, row 1
+|Cell in column 3, row 1
+
+|Cell in column 1, row 2
+|Cell in column 2, row 2
+|Cell in column 3, row 2
+|===
