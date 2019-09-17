@@ -1,4 +1,5 @@
 = Страница в разработке!
+
 = static partial class HelperFramework
 
 > Namespace: Pixeye.Framework.HelperFramework
@@ -20,13 +21,21 @@ HelperFramework - вспомогательный класс фреймворка
 
 .Math
 |===
-|Name of Column 1 |Name of Column 2 |Name of Column 3 
+|Тип |Метод |Описание
 
-|Cell in column 1, row 1
-|Cell in column 2, row 1
-|Cell in column 3, row 1
+.2+|bool
+a| [source,csharp] 
+Every(this float step, float time)
+.2+|Проверяет...
 
-|Cell in column 1, row 2
-|Cell in column 2, row 2
-|Cell in column 3, row 2
+a| [source,csharp] 
+Every(this int step, float time)
+
+.2+|bool
+a| [source,csharp] 
+PlusCheck(ref this float arg0_pl, float val_pl, float clamp_pl = 1f)
+.2+|Прибавляет и проверяет...
+
+a| [source,csharp] 
+PlusCheck(ref this int arg0_pl, int val_pl, int clamp_pl = 1)
 |===
