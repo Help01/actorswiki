@@ -5,7 +5,7 @@
 > Namespace: Pixeye.Framework.HelperFramework
 
 > Версия фреймворка: https://github.com/dimmpixeye/actors/tree/2019.9.15[2019.09.15] +
-> Последнее обновление статьи: [2019.09.16]
+> Последнее обновление статьи: [2019.09.19]
 
 ## Описание
 HelperFramework - вспомогательный класс фреймворка. В нем содержится множество методов расширений, которые облегчат вашу жизнь! :D Они могут быть разбросаны по разным файлам, поэтому, возможно, Вы встретите их и в других статьях.
@@ -38,4 +38,354 @@ PlusCheck(ref this float arg0_pl, float val_pl, float clamp_pl = 1f)
 
 a| [source,csharp] 
 PlusCheck(ref this int arg0_pl, int val_pl, int clamp_pl = 1)
+
+.2+|bool
+a| [source,csharp] 
+MinusCheck(ref this float arg0_mn, float val_mn, float clamp_mn = 0f)
+.2+|Прибавляет и проверяет...
+
+a| [source,csharp] 
+MinusCheck(ref this int arg0_mn, int val_mn, int clamp_mn = 0)
+
+.2+|void 
+a| [source,csharp] 
+Plus(ref this float arg0_pl, float val_pl, float clamp_pl = 1f)
+.2+|Прибавляет и проверяет...
+
+a| [source,csharp] 
+Plus(ref this int arg0_pl, int val_pl, int clamp_pl = 1)
+
+.2+|void 
+a| [source,csharp] 
+Minus(ref this float arg0_mn, float val_mn, float clamp_mn = 0f)
+.2+|Прибавляет и проверяет...
+
+a| [source,csharp] 
+Minus(ref this int arg0_mn, int val_mn, int clamp_mn = 0)
+|===
+
+## Bits
+
+.Bits
+|===
+|Тип |Метод |Описание
+
+|void
+a| [source,csharp] 
+BitOn(this ref int bitToTurnOn, int value)
+|Проверяет...
+
+|void
+a| [source,csharp] 
+BitOff(this ref int bitToTurnOff, int value)
+|Проверяет...
+
+|void
+a| [source,csharp] 
+BitFlip(this ref int bitToFlip, int value)
+|Проверяет...
+
+|bool 
+a| [source,csharp] 
+BitCheck(int bits, int value)
+|Проверяет...
+|===
+
+## Signals
+
+.Signals
+|===
+|Тип |Метод |Описание
+
+|void
+a| [source,csharp] 
+Send<T>(ref T signal) where T : struct
+|Отправляет сигнал дефолтному ProcessorSignals
+|===
+
+## ACTORS
+
+.ACTORS
+|===
+|Тип |Метод |Описание
+
+|List<int> 
+a| [source,csharp] 
+FindValidNodes(this List<PoolNode> list, int id)
+|...
+
+|int 
+a| [source,csharp] 
+FindValidNode(this List<PoolNode> list, int id, int pool)
+|...
+
+|int 
+a| [source,csharp] 
+FindInstanceID<T>(this List<T> list, T target) where T : UnityEngine.Object
+|...
+
+|void 
+a| [source,csharp] 
+Destroy(this Transform tr)
+|...
+|===
+
+## ARRAYS
+
+.ARRAYS
+|===
+|Тип |Метод |Описание
+
+|T[,] 
+a| [source,csharp] 
+ResizeArray<T>(this T[,] original, in int rows, in int cols)
+|...
+
+|void 
+a| [source,csharp] 
+InsertCheck(this int[] a, int id, ref int length, ref int indexLast)
+|...
+
+|void 
+a| [source,csharp] 
+InsertCheck(this int[] a, int id, ref int length, ref int indexLast)
+|...
+
+|void 
+a| [source,csharp] 
+Insert<T>(ref T[] a, T val, int length, int indexLast)
+|...
+
+|void 
+a| [source,csharp] 
+Insert(this int[] a, ref int length, ref int idLast, ref int indexLast, int id)
+|...
+
+|void 
+a| [source,csharp] 
+Add<T>(this T[] a, T element, ref int length) where T : class
+|...
+
+|void 
+a| [source,csharp] 
+Remove<T>(this T[] a, T element, ref int length) where T : class
+|...
+
+|void 
+a| [source,csharp] 
+InsertionSort(int[] array)
+|...
+
+|void 
+a| [source,csharp] 
+Quicksort(int[] array, int left, int right)
+|...
+
+|void 
+a| [source,csharp] 
+Swap(int[] array, int left, int right)
+|...
+
+|int
+a| [source,csharp] 
+SearchLinear(this int[] array, int value)
+|...
+
+|int
+a| [source,csharp] 
+SearchBinary(this int[] array, int rightIndex, int value, int prev)
+|...
+|===
+
+
+## RANDOM
+
+.RANDOM
+|===
+|Тип |Метод |Описание
+
+|int 
+a| [source,csharp] 
+Select(this float[] vals)
+|...
+
+|float 
+a| [source,csharp] 
+Between(this Vector2 v)
+|...
+
+|float 
+a| [source,csharp] 
+Or(this float arg0, float arg1, float chance = 0.5f)
+|...
+
+|int 
+a| [source,csharp] 
+Or(this int arg0, int arg1, float chance = 0.5f)
+|...
+
+|int 
+a| [source,csharp] 
+Between(this object o, int a, int b, float chance = 0.5f)
+|...
+
+|float 
+a| [source,csharp] 
+Between(this object o, float a, float b, float chance = 0.5f)
+|...
+
+|T 
+a| [source,csharp] 
+RandomExcept<T>(this T[] list, T exceptVal)
+|...
+
+|T 
+a| [source,csharp] 
+RandomExcept<T>(this List<T> list, T exceptVal)
+|...
+
+|T 
+a| [source,csharp] 
+Random<T>(this List<T> list, T[] itemsToExclude)
+|...
+
+| T 
+a| [source,csharp] 
+Random<T>(this List<T> list)
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this List<T> vals) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this T[] vals) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this T[] vals, out int index) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Random<T>(this T[] vals)
+|...
+
+|T 
+a| [source,csharp] 
+RandomDequeue<T>(this List<T> vals)
+|...
+|===
+
+## TRANSFORMS
+
+.TRANSFORMS
+|===
+|Тип |Метод |Описание
+
+|string 
+a| [source,csharp] 
+GetGameObjectPath(Transform transform)
+|...
+
+|T 
+a| [source,csharp] 
+AddGet<T>(this GameObject co) where T : Component
+|...
+
+|T 
+a| [source,csharp] 
+AddGet<T>(this Transform co) where T : Component
+|...
+
+|T 
+a| [source,csharp] 
+Find<T>(this GameObject go, string path)
+|...
+
+|Transform 
+a| [source,csharp] 
+FindDeep(this Transform obj, string id)
+|...
+
+|List<T> 
+a| [source,csharp] 
+GetAll<T>(this Transform obj)
+|...
+
+|T 
+a| [source,csharp] 
+RandomExcept<T>(this T[] list, T exceptVal)
+|...
+
+|T 
+a| [source,csharp] 
+RandomExcept<T>(this List<T> list, T exceptVal)
+|...
+
+|T 
+a| [source,csharp] 
+Random<T>(this List<T> list, T[] itemsToExclude)
+|...
+
+| T 
+a| [source,csharp] 
+Random<T>(this List<T> list)
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this List<T> vals) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this T[] vals) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Select<T>(this T[] vals, out int index) where T : IRandom
+|...
+
+|T 
+a| [source,csharp] 
+Random<T>(this T[] vals)
+|...
+
+|T 
+a| [source,csharp] 
+RandomDequeue<T>(this List<T> vals)
+|...
+|===
+
+---
+
+> Файл Obj.cs +
+> Последнее изменение файла: [2019.09.17]
+
+## Obj
+
+.Obj
+|===
+|Тип |Метод |Описание
+
+|void 
+a| [source,csharp] 
+Release(this GameObject o, int poolID = 0)
+|Уничтожает объект. Если он в пуле, то деактивирует.
+
+.3+|T 
+a| [source,csharp] 
+Get<T>(this GameObject obj, string path)
+.3+|Возвращает компонент по пути path. Альтернатива GetComponent
+
+a| [source,csharp] 
+Get<T>(this Transform tr, string path)
+
+a| [source,csharp] 
+Get<T>(this Behaviour obj, string path)
 |===
