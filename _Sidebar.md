@@ -15,6 +15,7 @@
 ### RU
 - [[Изменения 2019.08.30 | https://github.com/dimmpixeye/ecs/wiki/%D0%98%D0%B7%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F-2019.08.30]]
 - [[Последние изменения| (RU) Framework changes]]
+- [[Установка фреймворка NEW|(RU) Framework setup 2019]]
 - [[Установка фреймворка|(RU) Framework setup]]
 - [[Организация проекта|(RU) Project organization]]
 - [[Организация сцен|(RU) Scene organization]]
