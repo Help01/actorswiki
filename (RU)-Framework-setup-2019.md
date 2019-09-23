@@ -3,8 +3,8 @@
 > Актуально для версий юнити 2019+
 
 Оглавление
-1. [Способы установки](https://github.com/dimmpixeye/actors/wiki/%28RU%29-Framework-setup-2019/#%D0%A1%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8)
-2. [Дополнение к установке](https://github.com/dimmpixeye/actors/wiki/%28RU%29-Framework-setup-2019/#%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE)
+1. [Способы установки](https://github.com/dimmpixeye/actors/wiki/%28RU%29-Framework-setup-2019#%D0%A1%D0%BF%D0%BE%D1%81%D0%BE%D0%B1%D1%8B-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B8)
+2. [Дополнение к установке](https://github.com/dimmpixeye/actors/wiki/%28RU%29-Framework-setup-2019#%D0%94%D0%BE%D0%BF%D0%BE%D0%BB%D0%BD%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE)
 
 ## Способы установки
 
