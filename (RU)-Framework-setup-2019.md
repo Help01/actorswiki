@@ -70,7 +70,7 @@
 Отключить лишние библиотеки unity расположенные в Packages можно в **Window/Package Manager**.  
 !["Чистый проект с фреймворком"](https://thumb.cloud.mail.ru/weblink/thumb/xw1/3KNn/BkfACkdgV/Вариант%201_2.JPG?x-email=aleksey_ohezin%40mail.ru)  
 
-2. В **Actors/Install** имеется 2 дополнительных библиотеки. Их использование не обязательно.  
+2. В **Actors/Install** имеется 2 дополнительных библиотеки.  
 ![Доп. библиотеки Project Template и Plug Console](https://thumb.cloud.mail.ru/weblink/thumb/xw1/4w5z/3zgQDsQjJ/Вариант%201_3.JPG?x-email=aleksey_ohezin%40mail.ru)  
 **0 Project Template** предназначен для загрузки шаблона проекта со стартовыми сценами  
 **1 Plug Console** позволяет использовать внутриигровую консоль
