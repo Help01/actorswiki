@@ -161,6 +161,11 @@ a| [source,csharp]
 RandomExcept<T>(this List<T> list, T exceptVal)
 |...
 
+|ref T 
+a| [source,csharp] 
+RandomRef<T>(this T[] vals)
+|Возвращает случайный элемент массива
+
 |T 
 a| [source,csharp] 
 Random<T>(this List<T> list, T[] itemsToExclude)
