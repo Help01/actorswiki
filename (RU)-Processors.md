@@ -51,7 +51,7 @@ public class ProcessorDamageble : Processor, IReceive<SignalDamage>, ITick
 Для того чтобы обработчик не был уничтожен тулбоксом при смене сцены используйте интерфейс IKernel
 Например:
 ```csharp
-public class ProcessorTimer : ProcessorgBase, IKernel
+public class ProcessorTimer : Processor, IKernel
 ```
 На моей практике ни разу не возникало необходимости в использовании IKernel внутри кода игры. IKernel используется внутри фреймворка для базовых обработчиков так что используя его вы должны понимать зачем вам это нужно.
 
