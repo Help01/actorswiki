@@ -28,7 +28,7 @@
 
 - [[Основы|(RU) Basics]]
 - [[Компоненты|(RU) Components]]
-- [[Обработчики|(RU) Processings]]
+- [[Обработчики|(RU) Processors]]
 - [[Сущности|(RU) Entities]]
 - [[Акторы|(RU) Actors]]
 - [[Модели|(RU) Models]]
