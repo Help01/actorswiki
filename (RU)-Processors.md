@@ -1,11 +1,12 @@
+( Актуально на 28.09.2019 )
 ## Обработчики
 
 Обработчики - это название для всех систем, менеджеров, контроллеров и "глобальных" скриптов. 
 
 ## Как создавать
-Обработчики наследуются от ProcessingBase. 
+Обработчики наследуются от Processor. 
 ```csharp
- public class ProcessingDamageble : ProcessingBase
+ public class ProcessorDamageble : Processor
  {
 
  }
@@ -19,15 +20,15 @@ public class StarterLevel1 : Starter
 	protected override void Setup()
 	{
 		 
-		Add<ProcessingInputConnect>();
+		Add<ProcessorInputConnect>();
  
-		Add<ProcessingPlayer>();
-		Add<ProcessingMotion>();
-		Add<ProcessingRender>();
-		Add<ProcessingRenderShoot>();
+		Add<ProcessorgPlayer>();
+		Add<ProcessorgMotion>();
+		Add<ProcessorRender>();
+		Add<ProcessorRenderShoot>();
 		
-		Add<ProcessingMotionBlur>();
-		Add<ProcessingCamera>();
+		Add<ProcessorMotionBlur>();
+		Add<ProcessorCamera>();
          }
 }
 ```
@@ -35,13 +36,13 @@ public class StarterLevel1 : Starter
 Если обработчику нужны апдейты то используются интерфейсы ITick, ITickFixed, ITickLate.
 
 ```csharp
-public class ProcessingPlayer : ProcessingBase, ITick
+public class ProcessorPlayer : Processor, ITick
 ```
 
 Для работы с сигналами используется интерфейс IRecieve<Тип передаваемого объекта>
 
 ```csharp
-public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
+public class ProcessorDamageble : Processor, IReceive<SignalDamage>, ITick
 {
 	public void HandleSignal(ref SignalDamage arg){}
 }
@@ -50,7 +51,7 @@ public class ProcessingDamageble : ProcessingBase, IReceive<SignalDamage>, ITick
 Для того чтобы обработчик не был уничтожен тулбоксом при смене сцены используйте интерфейс IKernel
 Например:
 ```csharp
-public class ProcessingTimer : ProcessingBase, IKernel
+public class ProcessorTimer : ProcessorgBase, IKernel
 ```
 На моей практике ни разу не возникало необходимости в использовании IKernel внутри кода игры. IKernel используется внутри фреймворка для базовых обработчиков так что используя его вы должны понимать зачем вам это нужно.
 
@@ -60,21 +61,23 @@ public class ProcessingTimer : ProcessingBase, IKernel
 Пример из игры Cryoshock:
 
 ```csharp 
-public class ProcessingMotion : ProcessingBase, ITick, ITickFixed
+public class ProcessorMotion : Processor, ITick, ITickFixed
 {
 public Group<ComponentMotion, ComponentRigidbody, ComponentObject> groupMotion;
 
-public ProcessingMotion()
+public override void HandleEvents()
 {
-	groupMotion.Add += entity =>
-	{
-	var cRigid  = entity.ComponentRigidBody();
-	var cObject = entity.ComponentObject();
-	cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();
-	};
+	       // do something with added entities. 
+	       foreach (ent entity in groupMotion.added)
+		{
+		   var cRigid  = entity.ComponentRigidBody();
+	           var cObject = entity.ComponentObject();
+	           cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();
+		}
+	 
 }
 
-public void TickFixed()
+public void TickFixed(float delta)
 {
       foreach (var entity in groupMotion)
       {
@@ -84,10 +87,8 @@ public void TickFixed()
       }
 }
 
-public void Tick()
+public void Tick(float delta)
 	{
-        var delta  = Time.delta;
-                        
         var bounds = Game.roomBounds;
 			
 	foreach (var entity in groupMotion)
@@ -124,12 +125,10 @@ public void Tick()
 Обработчики создаются по типу во время игры и не наследуются от классов monobehavior. Чтобы провести инициализацию обработчика используем его конструктор. Например :
 
 ```csharp
-public ProcessingMotion()
+public ProcessorMotion()
 { 
 }
 ```
-
-Как правило это нужно для того чтобы добавить события для групп.
 
 ### События групп
 У каждой группы есть два события:
@@ -137,16 +136,19 @@ public ProcessingMotion()
 - Remove срабатывает когда некая сущность покидает группу.
 
 Ближайшие аналоги это методы OnEnable/OnDisable у monobehavior класса.
-
+Обрабатываются Все сущности добавленные или удаленные из группы за последний процессор.
+Для этого в процессоре вызывается метод HandleEvents.
 ```csharp
-public ProcessingMotion()
+public override void HandleEvents()
 {
-	groupMotion.Add += entity =>
- {
-	var cRigid = entity.ComponentRigidBody();
-	var cObject = entity.ComponentObject();
-	cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();	
- };
+	       // do something with added entities. 
+	       foreach (ent entity in groupMotion.added)
+		{
+		   var cRigid  = entity.ComponentRigidBody();
+	           var cObject = entity.ComponentObject();
+	           cRigid.body = cObject.transform.GetComponent<Rigidbody2D>();
+		}
+	 
 }
 ```
 
@@ -191,24 +193,11 @@ var cMotion   = entity.ComponentMotion();
 	var cMotion   = entity.ComponentMotion();
 ```
 
-- Старайтесь не делать лишних рассчетов и обращений. Даже Time.DeltaTime - это обращение. Если у вас есть 100 сущностей в группе нет никакого смысла делать 100 обращений к дельте.
-
-```csharp
-        var delta = Time.delta;
-	foreach (var entity in groupInAir)
-	{
-	var cInAir    = entity.ComponentInAir();
-	var cRigid    = entity.ComponentRigidBody();
-	var cMotion   = entity.ComponentMotion();
-        cMotion.direction.y -= 1 * delta;
-        }
-```
-
-- Группы в обработчиках - это ссылки. Физически группы расположены внутри ProcessingEntities. Таким образом два разных обработчика использующие группу с одинаковыми фильтрами не порождают две группы а ссылаются на одну и ту же группу.
+- Группы в обработчиках - это ссылки. Физически группы расположены в другом месте. Таким образом два разных обработчика использующие группу с одинаковыми фильтрами не порождают две группы а ссылаются на одну и ту же группу.
 
 - Группы могут быть использованы вне обработчиков. Для этого достаточно в методе инициализации нужного класса указать
 ```csharp
-	ProcessingGroupAttributes.Setup(this);
+ProcessorGroups.Setup(this);
 ```
 _Это продвинутая техника и вы должны точно понимать зачем вам это и как работать с этим._
 
