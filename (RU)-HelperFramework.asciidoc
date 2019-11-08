@@ -21,29 +21,25 @@ HelperFramework - вспомогательный класс фреймворка
 
 ## ACTORS
 [width = 75%]
-[cols = "1,a,1"]
+[cols = "^,1"]
 .ACTORS
 |===
-|Тип |Метод |Описание
+|Метод |Описание
 
-|List<int> 
-a| [source,csharp] 
-FindValidNodes(this List<PoolNode> list, int id)
+a|[source,csharp] 
+List<int> FindValidNodes(this List<PoolNode> list, int id)
 |...
 
-|int 
-a| [source,csharp] 
-FindValidNode(this List<PoolNode> list, int id, int pool)
+a|[source,csharp] 
+int FindValidNode(this List<PoolNode> list, int id, int pool)
 |...
 
-|int 
-a| [source,csharp] 
-FindInstanceID<T>(this List<T> list, T target) where T : UnityEngine.Object
+a|[source,csharp]  
+int FindInstanceID<T>(this List<T> list, T target) where T : UnityEngine.Object
 |...
 
-|void 
-a| [source,csharp] 
-Destroy(this Transform tr)
+a|[source,csharp] 
+void Destroy(this Transform tr)
 |...
 |===
 
@@ -322,53 +318,39 @@ Get<T>(this Behaviour obj, string path)
 
 .Math
 |===
-|Тип |Метод |Описание
-
-.2+|bool
-a| [source,csharp] 
-Every(this float step, float time)
-.2+|Возвращает true, если `time` кратно `step`
+|Метод |Описание
 
 a| [source,csharp] 
-Every(this int step, float time)
+bool Every(this float step, float time);
+bool Every(this int step, float time);
+|Возвращает true, если `time` кратно `step`
 
-.2+|bool
 a| [source,csharp]
-PlusCheck(ref this float arg0_pl, float val_pl, float clamp_pl = 1f)
-.2+|`clamp_pl` - верхний порог результата. +
+bool PlusCheck(ref this float arg0_pl, float val_pl, float clamp_pl = 1f);
+bool PlusCheck(ref this int arg0_pl, int val_pl, int clamp_pl = 1);
+|`clamp_pl` - верхний порог результата. +
 В `arg0_pl` записывается результат сложения с `val_pl`. +
 Возвращает true, если результат суммы >= `clamp_pl`.
 
 a| [source,csharp] 
-PlusCheck(ref this int arg0_pl, int val_pl, int clamp_pl = 1)
-
-.2+|bool
-a| [source,csharp] 
-MinusCheck(ref this float arg0_mn, float val_mn, float clamp_mn = 0f)
-.2+|`clamp_mn` - нижний порог результата. +
+bool MinusCheck(ref this float arg0_mn, float val_mn, float clamp_mn = 0f);
+bool MinusCheck(ref this int arg0_mn, int val_mn, int clamp_mn = 0);
+|`clamp_mn` - нижний порог результата. +
 В `arg0_mn` записывается результат вычитания `val_pl`. +
 Возвращает true, если результат вычитания <= `clamp_mn`.
 
 a| [source,csharp] 
-MinusCheck(ref this int arg0_mn, int val_mn, int clamp_mn = 0)
-
-.2+|void 
-a| [source,csharp] 
-Plus(ref this float arg0_pl, float val_pl, float clamp_pl = 1f)
-.2+|`clamp_pl` - верхний порог результата. +
+void Plus(ref this float arg0_pl, float val_pl, float clamp_pl = 1f);
+void Plus(ref this int arg0_pl, int val_pl, int clamp_pl = 1);
+|`clamp_pl` - верхний порог результата. +
 В `arg0_pl` записывается результат сложения с `val_pl`.
 
 a| [source,csharp] 
-Plus(ref this int arg0_pl, int val_pl, int clamp_pl = 1)
-
-.2+|void 
-a| [source,csharp] 
-Minus(ref this float arg0_mn, float val_mn, float clamp_mn = 0f)
-.2+|`clamp_mn` - нижний порог результата. +
+void Minus(ref this float arg0_mn, float val_mn, float clamp_mn = 0f);
+void Minus(ref this int arg0_mn, int val_mn, int clamp_mn = 0);
+|`clamp_mn` - нижний порог результата. +
 В `arg0_mn` записывается результат вычитания `val_pl`.
 
-a| [source,csharp] 
-Minus(ref this int arg0_mn, int val_mn, int clamp_mn = 0)
 |===
 
 ## Bits
