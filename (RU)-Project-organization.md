@@ -41,10 +41,10 @@
 Начинаются с вида скрипта. Это позволяет понять о чем скрипт не залезая внутрь. В рамках фреймворка где компоненты строго разделены по своему функционалу это имеет смысл.
 
 * Все акторы начинаются со слова Actor : ActorPlayer, ActorEnemy1, ActorEnemy2, ActorTank, ActorSpaceShip, ActorAsteroid
-* Все компоненты данных начинаются с Data : DataPlayer, DataView, DataMove, DataWeapon
-* Все обработчики начинаются с Processing : ProcessingAmmo, ProcessingAI, ProcessingMove
+* Все компоненты данных начинаются с Component : ComponentPlayer, ComponentView, ComponentMove, ComponentWeapon
+* Все обработчики начинаются с Processor : ProcessorAmmo, ProcessorAI, ProcessorMove
 * Все сигналы начинаются с Signal : SignalDamage, SignalJobsDone
-* Все компоненты Unity : ComponentTag, ComponentAnimationEvents
+* Все компоненты Unity : BehaviourTag, BehaviourAnimationEvents
 * И так далее для любого типа скрипта: Sample,Blueprint,Factory
 
 ![Названия скриптов](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
