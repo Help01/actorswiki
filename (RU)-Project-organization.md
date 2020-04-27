@@ -45,7 +45,7 @@
 * Все обработчики начинаются с `Processor` : ProcessorAmmo, ProcessorAI, ProcessorMove
 * Все сигналы начинаются с `Signal` : SignalDamage, SignalJobsDone
 * Все компоненты Unity с `Mono` : MonoTag, MonoAnimationEvents
-* И так далее для любого типа скрипта: Sample,Blueprint,Factory
+* И так далее для любого типа скрипта: Sample, Blueprint, Factory
 
 ![Названия скриптов](https://i.gyazo.com/958b430486bcf32451d94dfce87044e7.png)
 
