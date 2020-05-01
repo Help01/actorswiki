@@ -85,6 +85,9 @@ namespace Pixeye.Source
     #endregion
 }
 ```
+<details>
+<summary><b>Сниппеты для VS и Rider</b></summary>
+
 #### Код сниппета для Visual Studio
 Shortcut для вызова сниппета - `comp`. После двойного нажатия TAB вам нужно ввести имя компонента (без префикса Component, он уже прописан), после чего вы можете нажать снова TAB и ввести namespace, в котором находится класс компонента данных (или отредактируйте сниппет, исключив это).
 ```xml
@@ -156,6 +159,51 @@ Shortcut для вызова сниппета - `comp`. После двойно�
 Чтобы использовать сниппет, разместите файл с расширением **.snippet** по расположению **%USERPROFILE%\Documents\Visual Studio 2019\Code Snippets\Visual C#\My Code Snippets**.  
 
 [Руководство](https://docs.microsoft.com/ru-ru/visualstudio/ide/walkthrough-creating-a-code-snippet?view=vs-2019 "Официальное руководство с msdn") по сниппетам. [(доп.)](https://professorweb.ru/my/programs/visual-studio/level2/2_17.php "Руководство на DoctorWeb")  
+#### Live Template in Rider
+Перейдите в `Settings -> Editor -> Live template`. Выберите C#, нажмите `New template` (справа ввверху). Заполните поле кода сниппета:
+```csharp
+    public class Component$shortname$
+     {
+			$end$
+     }
+      
+   #region HELPERS
+   public static partial class Component
+    {
+     public const string $shortname$ = "$namespace$.Component$shortname$";
+		internal static ref Component$shortname$ Component$shortname$(in this Pixeye.Actors.ent entity)
+		=> ref Storage<Component$shortname$>.components[entity.id];
+    }
+    
+   sealed class Storage$shortname$ : Storage<Component$shortname$>
+     {
+	     public override Component$shortname$ Create() => new Component$shortname$();
+	     
+	     public override void Dispose(Pixeye.Actors.indexes disposed)
+		  {
+			  foreach (var id in disposed)
+			  {
+				ref var component = ref components[id];
+				//dispose (reset) logic
+			  }
+		  }
+      
+     }
+    #endregion
+```
+Настройте сниппет:  
+
+![Настройки](https://i.gyazo.com/42b7d5c53fadc9ffcd556cd28fd50800.png)  
+
+Расположите переменные в удобном для вас порядке их ввода (как на картинке). Также нажмите `change macro` и выберите *containing type name* для переменной `shortname`:  
+
+![Порядок](https://i.gyazo.com/b2f99435db63fc9f095b35a2827599a9.png)  
+
+Настройте `change macro` для `namespace`:  
+
+![macro](https://i.gyazo.com/891d22af20b4f0d5dc8e9a01db0ec853.png)  
+[Руководство](https://www.jetbrains.com/help/idea/creating-and-editing-live-templates.html "live templates for rider") по сниппетам.
+</details>  
 
 #### Через юнити
 Create->Actors->Add->Component
