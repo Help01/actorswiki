@@ -4,7 +4,7 @@
 Компонент - это кирпич игры описывающий некий набор переменных. Наборы компонентов формируют контекст сущности и хранят ее состояние. Во фреймворке компоненты часто пишутся с атрибутом _[Serializable]_ для того чтобы редактировать поля в инспекторе Unity.  
 >Помимо самого класса компонента данных обязательно нужно объявить класс хранилища компонентов (зона хелперов в примере).  
 
->Начинайте имя компонента с `Component`, в противном случае ломается debug-режим фреймворка (переключить в release можно с помощью пункта меню Actors в Unity)
+>Начинайте имя компонента с `Component`, в противном случае ломается debug-режим фреймворка (если для вас это не подходит, то переключить в release можно с помощью пункта меню Actors в Unity)
 ```csharp
 using System;
 using Pixeye.Actors;
@@ -215,52 +215,53 @@ Shortcut для вызова сниппета - `comp`. После двойно�
 ##### File Templates
 <details>
 	<summary>Rider</summary>  
-	
-Откройте настройки: `Editor | File Templates | C#`. Нажмите создать, заполните поле для кода:  
 
+Воспользуйтесь этим меню:  
+![Меню Code Templates](https://i.gyazo.com/a562d8ff8f30bdf2763c5e9efbefbe96.png)  
+
+Создайте новый шаблон:  
 ```csharp
-	 namespace $namespace$
- {
- public class $name$
-     {
+#set($FullName = ${NAME}) 
+#set($end = $FullName.substring(9))
+#set($component = $FullName.substring(1))
+
+
+using Pixeye.Actors;
+
+namespace Pixeye.Source
+{
+ 
+    public class ${FullName}
+    {
      
-     }
+    }
       
    #region HELPERS
    public static partial class Component
     {
-     public const string $end$ = "$namespace$.$name$";
-		internal static ref $name$ $name$(in this Pixeye.Actors.ent entity)
-		=> ref Storage<$name$>.components[entity.id];
+        public const string $end = "Pixeye.Source.$FullName";
+    
+        internal static ref ${FullName} c$component(in this ent entity)
+        => ref Storage<${FullName}>.components[entity.id];
     }
     
-   sealed class Storage$name$ : Storage<$name$>
+   sealed class Storage${FullName} : Storage<${FullName}>
      {
-	     public override $name$ Create() => new $name$();
-	     
-	     public override void Dispose(Pixeye.Actors.indexes disposed)
-		  {
-			  foreach (var id in disposed)
-			  {
-				ref var component = ref components[id];
-				//dispose (reset) logic
-			  }
-		  }
+         public override ${FullName} Create() => new ${FullName}();
+         
+        public override void Dispose(indexes disposed)
+        {
+            foreach (var index in disposed)
+            {
+                ref var component = ref components[index];
+            }
+        }
+         
      }
     #endregion
-}  
-```
-Настройте:  
-
-![Меню настроек шаблона](https://i.gyazo.com/643df99b2f273dd3edfe50b6ed866307.png)  
-
-Далее в `Edit variables` расположите переменные в нужном порядке и настройте для них макросы:  
-
-![Настройка первой переменной](https://i.gyazo.com/794d0e4413c62e8cba437f9bf065754a.png)
-![Второй переменной](https://i.gyazo.com/24bedbb453962151c12eee591b10237f.png)
-![Третьей переменной](https://i.gyazo.com/1f06ca2fd61c44b5f2959e4dc43f2b4f.png)  
-
-
+}
+```  
+[Руководство](https://www.jetbrains.com/help/rider/Using_File_and_Code_Templates.html#) по File Templates.
 </details>
 
 #### Через юнити
