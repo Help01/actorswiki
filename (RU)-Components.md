@@ -212,6 +212,58 @@ Shortcut для вызова сниппета - `comp`. После двойно�
 
 </details>  
 
+<details>
+	<summary>VS Code</summary>  
+	
+Shortcut для вызова сниппета - `comp`. После чего нажатием TAB или мышкой выбираем его, вводим имя компонента (без префикса Component, он уже прописан) - готово.  
+Настройка сниппета: `File>Preferences>User Snippets` выбираем `csharp`, затем вставляем этот "код"(разметку json) в файл. Форматирование уже заботливо выполнено мной, но если вам не нравится перенос строки, то: SHIFT+ALT+F.  
+>P.S. это глобальный файл для всех C# сниппетов
+```json
+	"Component": {
+		"prefix": "сomp",
+		"body": [
+			"using System;",
+			"using Pixeye.Actors;",
+			"namespace Pixeye.Source",
+			"{",
+				"\t[Serializable]",
+				"\tpublic class Component${1:FullName}",
+				"\t{",
+				"\t\t//Data",
+				"\t}",
+
+			"#region HELPERS",
+			"\tpublic static partial class Component",
+			"\t{",
+				"\t\tpublic const string ${1:FullName} = \"Pixeye.Source.Component${1:FullName}\";",
+
+				"\t\tinternal static ref Component${1:FullName} Component${1:FullName}(in this ent entity) \n\t\t\t\t=> ref Storage<Component${1:FullName}>.components[entity.id];",
+			"\t}",
+
+			"\tsealed class StorageComponent${1:FullName} : Storage<Component${1:FullName}>",
+			"\t{",
+				"\t\tpublic override Component${1:FullName} Create() => new Component${1:FullName}();",
+				"\t\tpublic override void Dispose(indexes disposed)",
+				"\t\t{",
+					"\t\t\tforeach (var id in disposed)",
+					"\t\t\t{",
+						"\t\t\t\tref var component = ref components[id];",
+					"\t\t\t}",
+				"\t\t}",
+
+			"\t}",
+
+			"#endregion",
+
+
+			"}"
+		],
+		"description": "New Actors Component with Helper"
+	}
+```
+
+</details>
+
 ##### File Templates
 <details>
 	<summary>Rider</summary>  
